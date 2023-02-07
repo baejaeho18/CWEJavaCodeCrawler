@@ -1,4 +1,4 @@
-module cweCrawler {
+module CWEJavaCodeCrawler {
 	requires org.jsoup;
 	requires json.simple;
 }
