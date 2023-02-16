@@ -1,19 +1,13 @@
 package edu.handong.csee.cwe;
 
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import org.json.simple.JSONArray;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
 import edu.handong.csee.cwe.crawler.Crawler;
-import edu.handong.csee.cwe.saver.SaveAsCSV;
-import edu.handong.csee.cwe.saver.SaveAsJson;
+import edu.handong.csee.cwe.saver.SaveAsFile;
+import edu.handong.csee.cwe.saver.SaveAsJsonFormat;
 import edu.handong.csee.cwe.value.CWE;
+import edu.handong.csee.cwe.value.JsonFormat;
 
 public class Main {
 
@@ -27,26 +21,15 @@ public class Main {
 		cwes.addAll(Crawler.crawler(url+"1194.html"));
 		cwes.addAll(Crawler.crawler(url+"1000.html"));
 		
-		// connect to CWE homepage
+		// connect to CWE homepage // only for java
 		String cweByJavaLink = "https://cwe.mitre.org/data/definitions/660.html";
+	
+		JsonFormat jsonFormat = SaveAsJsonFormat.saveAsJson(cwes);
+		SaveAsFile.saveFileAsJson(jsonFormat.getCweInfo(), "cweInfo.json");
+		SaveAsFile.saveFileAsJson(jsonFormat.getCweCode(), "cweCode.json");
+		SaveAsFile.saveFileAsJson(jsonFormat.getCweCVE(), "cweCVE.json");
 		
-		SaveAsCSV.saveAsCSV(cwes);
-		
-		
-//		// save cwe info as json format
-//		JSONArray cweJson = SaveAsJson.saveCWEAsJson(cwes);
-//	//	String json = SaveCWE.saveCWEASJson(cwes);
-//		// write json format to file
-//		try {
-//			FileWriter file = new FileWriter("./cwe.json");
-//			file.write(cweJson.toJSONString());
-//		//	file.write(json);
-//			file.flush();
-//			file.close();
-//		} catch (IOException e) {
-//			System.out.println("File Error");
-//		}
-
+		SaveAsFile.saveFileAsWorkSheet();
 	}
 
 }

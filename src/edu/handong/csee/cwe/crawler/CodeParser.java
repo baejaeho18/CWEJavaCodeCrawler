@@ -20,9 +20,9 @@ public class CodeParser {
 //		badCode = badCode.replace("}", "}\n");
 //		badCode = badCode.replace("<", "\n<");
 //		badCode = badCode.replace(">", ">\n");
-		badCode = badCode.replace(";", ";\n");
+//		badCode = badCode.replace(";", ";\n");
 //		badCode = badCode.replace("  ", " ");
-		badCode = badCode.replace("...", "...\n");
+//		badCode = badCode.replace("...", "...\n");
 		
 		// html = html.replace("\n\n", "\n");
 		

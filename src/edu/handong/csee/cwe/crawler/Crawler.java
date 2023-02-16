@@ -3,10 +3,6 @@ package edu.handong.csee.cwe.crawler;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 import edu.handong.csee.cwe.value.CWE;
 
