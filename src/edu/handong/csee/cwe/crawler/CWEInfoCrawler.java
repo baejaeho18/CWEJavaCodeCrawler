@@ -77,8 +77,11 @@ public class CWEInfoCrawler {
 			// bad code
 			Elements badCodes = example.getElementsByAttributeValue("class", "indent Bad");
 			for(Element bc : badCodes) {
-			//	exampleCode.add(CodeParser.parser(bc.html()));
-				exampleCode.add(CodeParser.parser(bc));
+				// null	is contained so that could see all cweIds in cweCode file.
+				// exampleCode.add(CodeParser.parser(bc));	
+				String badCode = CodeParser.parser(bc);
+				if(badCode != null)
+					exampleCode.add(badCode);
 			}
 		} catch(NullPointerException e) {
 			System.out.println("No example");

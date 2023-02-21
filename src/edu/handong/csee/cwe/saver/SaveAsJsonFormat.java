@@ -50,7 +50,7 @@ public class SaveAsJsonFormat {
 			obj.put("name", cwe.getName());
 			obj.put("description", cwe.getDescription());
 			obj.put("exampleDescription", cwe.getExampleDescription());
-			obj.put("cveList", cwe.getCveList());
+			obj.put("applicable language", cwe.getPlatformLanguage());
 			
 			cweInfoJson.add(obj);
 		}

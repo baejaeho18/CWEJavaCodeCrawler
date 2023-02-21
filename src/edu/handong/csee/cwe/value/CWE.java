@@ -15,6 +15,7 @@ public class CWE {
 	
 	public ArrayList<String> exampleCode = new ArrayList<String>();
 	public String exampleDescription;
+//	public String hasJavaSudoCode;	// if we made data as DB, we would not need it.
 	
 	public CWE(String id, String name, String description, String platformLanguage,
 			ArrayList<String> exampleCode, String exampleDescription, ArrayList<String> cveList) {
